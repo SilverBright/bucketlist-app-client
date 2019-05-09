@@ -18,14 +18,16 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.ideas)
     return (
       <div className="App">
         <div className="navbar">
-          <h4>Navbar</h4>
+          <h4>Navbar</h4> 
           {/* <Navbar /> */}
         </div>
         <div className="sidebar">
-          <Ideas ideas={ideas} />
+        <h4>LIST OF IDEAS</h4>
+          <Ideas ideas={this.state.ideas} />
         </div>
         <div className="main-content">
           <h4>main content</h4>
