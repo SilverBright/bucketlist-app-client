@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Ideas from './components/Ideas';
+import IdeaService from './services/IdeaService';
+import AddIdea from './components/AddIdea';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      ideas: []
+    }
+  }
+
+  componentDidMount() {
+    IdeaService.fetchIdeas().then(ideas => this.setState({ ideas })
+    )
+  }
+
+  addIdea = idea => {
+    IdeaService.createIdea(idea).then(idea => this.setState({
+      ideas: this.state.ideas.concat(idea)
+    }))
+  }
+
+  render() {
+    console.log(this.state.ideas)
+    return (
+      <div className="App">
+        <div className="navbar">
+          <h4>Navbar</h4> 
+          {/* <Navbar /> */}
+        </div>
+         <div className="ideas-app container">
+          <h1 className="center blue-text">BRAINSTORM</h1>
+          <div className="ideas collection">
+          <Ideas ideas={this.state.ideas} />
+          <AddIdea addIdea={this.addIdea} />
+        </div>
+          {/* <Idea /> */}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
