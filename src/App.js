@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Ideas from './components/Ideas';
 import IdeaService from './services/IdeaService';
+import AddIdea from './components/AddIdea';
 import './App.css';
 
 class App extends Component {
@@ -17,6 +18,12 @@ class App extends Component {
     )
   }
 
+  addIdea = idea => {
+    IdeaService.createIdea(idea).then(idea => this.setState({
+      ideas: this.state.ideas.concat(idea)
+    }))
+  }
+
   render() {
     console.log(this.state.ideas)
     return (
@@ -25,12 +32,12 @@ class App extends Component {
           <h4>Navbar</h4> 
           {/* <Navbar /> */}
         </div>
-        <div className="sidebar">
-        <h4>LIST OF IDEAS</h4>
+         <div className="ideas-app container">
+          <h1 className="center blue-text">BRAINSTORM</h1>
+          <div className="ideas collection">
           <Ideas ideas={this.state.ideas} />
+          <AddIdea addIdea={this.addIdea} />
         </div>
-        <div className="main-content">
-          <h4>main content</h4>
           {/* <Idea /> */}
         </div>
       </div>
