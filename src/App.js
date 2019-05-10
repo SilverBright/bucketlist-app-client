@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.ideas)
+    // console.log(this.state.ideas)
     return (
       <div className="App">
         <div className="navbar">
@@ -34,9 +34,11 @@ class App extends Component {
         </div>
          <div className="ideas-app container">
           <h1 className="center blue-text">BRAINSTORM</h1>
+          <div className="container">
+            <AddIdea addIdea={this.addIdea} />
+          </div>
           <div className="ideas collection">
-          <Ideas ideas={this.state.ideas} />
-          <AddIdea addIdea={this.addIdea} />
+          <Ideas ideas={this.state.ideas}  />
         </div>
           {/* <Idea /> */}
         </div>

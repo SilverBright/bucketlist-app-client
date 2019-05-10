@@ -10,11 +10,6 @@ class AddIdea extends Component {
     }
   }
 
-  // handleChange = (e) => {
-  //   this.setState({
-  //       title: e.target.value
-  //   })
-  // }
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -31,57 +26,32 @@ class AddIdea extends Component {
     })
   }
 
-  render() {
+render() {
     return (
-  
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="idea_title">Idea Title</label>
-        <input
-          type="text"
-          name="title"
-          value={this.state.title}
-          onChange={this.handleChange}
-          placeholder="Idea Title"
-        />
+       <form onSubmit={this.handleSubmit}>
+         <label htmlFor="idea_title">Idea Title</label>
+          <input center
+           type="text"
+           name="title"
+           value={this.state.title}
+           onChange={this.handleChange}
+           placeholder="Idea Title"
+         />
+         <label htmlFor="idea_body">Idea Body</label>
+          <input
+           type="text"
+           name="body"
+           value={this.state.body}
+           onChange={this.handleChange}
+           placeholder="Idea Body"
+         />
         <br/>
-        <label htmlFor="idea_body">Idea Body</label>
-        <input
-          type="text"
-          name="body"
-          value={this.state.body}
-          onChange={this.handleChange}
-          placeholder="Idea Body"
-        />
-        <br/>
-        <button>Add Your Idea</button>
-      </form>
+         <button>Add Your Idea</button>
+       </form>
+    
     )
   }
 }
-
-//   handleChange = (e) => {
-//     this.setState({
-//         title: e.target.value
-//     })
-//   }
-//   handleSubmit = (e) => {
-//     e.preventDefault();
-//     this.props.addTodo(this.state)
-//     this.setState({
-//         title: ''
-//     })
-//   }
-//   render(){
-//     return (
-//         <div>
-//             <form onSubmit={this.handleSubmit}>
-//                 <label>Add a new idea here:</label>
-//                 <input type="text" onChange={this.handleChange} value={this.state.title} />
-//             </form>
-//         </div>
-//     )
-//   }
-// }
 
 export default AddIdea;
   
