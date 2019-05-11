@@ -2,8 +2,7 @@ import React from 'react';
 import Target from '../targets.jpg';
 
 const Ideas = ({ ideas }) => {
-  const reverseOrderIdeas = ideas.reverse()
-  const renderIdeas = reverseOrderIdeas.map(idea =>
+  const renderIdeas = ideas.map(idea => 
     <div className="brainstorm card" key={idea.id}>
       <img src={Target} alt="target"/>
       <div className="card-content">

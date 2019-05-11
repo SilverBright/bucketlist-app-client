@@ -29,14 +29,17 @@ class AddIdea extends Component {
 render() {
     return (
        <form onSubmit={this.handleSubmit}>
+
          <label htmlFor="idea_title">Idea Title</label>
-          <input center
+          <input
            type="text"
            name="title"
            value={this.state.title}
            onChange={this.handleChange}
            placeholder="Idea Title"
          />
+
+
          <label htmlFor="idea_body">Idea Body</label>
           <input
            type="text"

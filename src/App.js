@@ -34,11 +34,11 @@ class App extends Component {
         </div>
          <div className="ideas-app container">
           <h1 className="center blue-text">BRAINSTORM</h1>
-          <div className="container">
+          <div>
             <AddIdea addIdea={this.addIdea} />
           </div>
           <div className="ideas collection">
-          <Ideas ideas={this.state.ideas}  />
+          <Ideas ideas={this.state.ideas} />
         </div>
           {/* <Idea /> */}
         </div>

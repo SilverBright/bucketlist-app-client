@@ -17,7 +17,7 @@ code {
   position: absolute;
   top: 20px;
   left: -30px;
-  opacity: 0.4;
+  opacity: 0.3;
   width: 150px;
   height: 150px
 }
@@ -27,17 +27,21 @@ code {
   padding-left: 10px;
 } 
 
-
-/*  CENTER PLACEHOLDER IN FORM */
-::-webkit-input-placeholder {
+input {
   text-align: center;
-}
-:-moz-placeholder { /* Firefox 18- */
-  text-align: center;  
-}
-::-moz-placeholder {  /* Firefox 19+ */
-  text-align: center;  
-}
-:-ms-input-placeholder {  
+} 
+
+/*  CENTER INPUT IN FORM */
+/* ::-webkit-input-placeholder {
+  text-align: center;
+} */
+/* :-moz-placeholder { /* Firefox 18- */
+  /* text-align: center;   */
+/* }  */
+/* ::-moz-placeholder {  /* Firefox 19+ */
+  /* text-align: center;  */
+/* }  */
+/* :-ms-input-placeholder {  
   text-align: center; 
-}
+}  */
+
