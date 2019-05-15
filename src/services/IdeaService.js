@@ -19,7 +19,18 @@ createIdea(idea) {
 
     return fetch(`${API_URL}/ideas`, request)
       .then(response => response.json())
-  }
-}
+  },
 
+deleteIdea(ideaId) {
+  const request = {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  };
+
+    return fetch(`${API_URL}/ideas/${ideaId}`, request)
+  }
+};
+ 
 export default IdeaService;
