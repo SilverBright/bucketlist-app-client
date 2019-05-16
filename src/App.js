@@ -1,31 +1,11 @@
 import React, { Component } from 'react';
 import Ideas from './components/Ideas';
-import IdeaService from './services/IdeaService';
 import AddIdea from './components/AddIdea';
 import './App.css';
+// import IdeaService from './services/IdeaService';
 
 class App extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      ideas: []
-    }
-  }
-
-  componentDidMount() {
-    IdeaService.fetchIdeas().then(ideas => this.setState({ ideas })
-    )
-  }
-
-  addIdea = idea => {
-    IdeaService.createIdea(idea).then(idea => this.setState({
-      ideas: this.state.ideas.concat(idea)
-    }))
-  }
-
   render() {
-    console.log(this.state.ideas)
     return (
       <div className="App">
         <div className="navbar">
@@ -34,9 +14,11 @@ class App extends Component {
         </div>
          <div className="ideas-app container">
           <h1 className="center blue-text">BRAINSTORM</h1>
+          <div>
+            <AddIdea addIdea={this.addIdea} />
+          </div>
           <div className="ideas collection">
-          <Ideas ideas={this.state.ideas} />
-          <AddIdea addIdea={this.addIdea} />
+          <Ideas ideas={this.props.ideas} />
         </div>
           {/* <Idea /> */}
         </div>
@@ -46,3 +28,23 @@ class App extends Component {
 }
 
 export default App;
+
+
+  // constructor() {
+  //   super()
+
+  //   this.state = {
+  //     ideas: []
+  //   }
+  // }
+
+  // componentDidMount() {
+  //   IdeaService.fetchIdeas().then(ideas => this.setState({ ideas })
+  //   )
+  // }
+
+  // addIdea = idea => {
+  //   IdeaService.createIdea(idea).then(idea => this.setState({
+  //     ideas: this.state.ideas.concat(idea)
+  //   }))
+  // }
