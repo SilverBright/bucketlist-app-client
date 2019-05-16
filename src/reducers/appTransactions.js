@@ -1,29 +1,29 @@
 export default (state = {
-  makeRequestToAPI: false,
+  makingRequestToAPI: false,
   lastRequestFailed: false,
-}, action => {
+}, action) => {
   switch (action.type) {
 
-    case "MAKE_API_REQUEST":
+    case "MAKING_API_REQUEST":
       return {
         ...state,
-        lastRequestFailed: true
+        makingRequestToAPI: true
       }
 
-    case "COMPLETED_API_REQUEST":
+    case "FINISHED_API_REQUEST":
       return {
         ...state,
-        makeRequestToAPI: false
+        makingRequestToAPI: false
       }
 
-    case "FAILED_API_REQUEST":
+    case "UNSUCCESSFUL_API_REQUEST":
       return {
         ...state,
-        makeRequestToAPI: false,
+        makingRequestToAPI: false,
         lastRequestFailed: true,
       }
 
-    default:
+    default: 
       return state
   }
 }

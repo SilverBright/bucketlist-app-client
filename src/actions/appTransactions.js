@@ -1,17 +1,17 @@
 export const makeFetchRequest = () => {
   return {
-    type: 'MAKE_API_REQUEST',
+    type: 'MAKING_API_REQUEST',
   }
 }
 
-export const completeFetchRequest = () => {
+export const finishFetchRequest = () => {
    return {
-     type: 'COMPLETE_API_REQUEST'
+     type: 'FINISHED_API_REQUEST'
    }
 }
 
-export const failedFetchRequest = () => {
+export const unsuccessfulFetchRequest = () => {
    return {
-     type: 'FAILED_API_REQUEST'
+     type: 'UNSUCCESSFUL_API_REQUEST'
    }
 }
