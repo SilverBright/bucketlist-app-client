@@ -5,27 +5,7 @@ import './App.css';
 // import IdeaService from './services/IdeaService';
 
 class App extends Component {
-  // constructor() {
-  //   super()
-
-  //   this.state = {
-  //     ideas: []
-  //   }
-  // }
-
-  // componentDidMount() {
-  //   IdeaService.fetchIdeas().then(ideas => this.setState({ ideas })
-  //   )
-  // }
-
-  // addIdea = idea => {
-  //   IdeaService.createIdea(idea).then(idea => this.setState({
-  //     ideas: this.state.ideas.concat(idea)
-  //   }))
-  // }
-
   render() {
-    // console.log(this.state.ideas)
     return (
       <div className="App">
         <div className="navbar">
@@ -48,3 +28,23 @@ class App extends Component {
 }
 
 export default App;
+
+
+  // constructor() {
+  //   super()
+
+  //   this.state = {
+  //     ideas: []
+  //   }
+  // }
+
+  // componentDidMount() {
+  //   IdeaService.fetchIdeas().then(ideas => this.setState({ ideas })
+  //   )
+  // }
+
+  // addIdea = idea => {
+  //   IdeaService.createIdea(idea).then(idea => this.setState({
+  //     ideas: this.state.ideas.concat(idea)
+  //   }))
+  // }

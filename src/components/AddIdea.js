@@ -12,7 +12,6 @@ class AddIdea extends Component {
     }
   }
 
-
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -20,8 +19,8 @@ class AddIdea extends Component {
     })
   }
 
-  handleSubmit = (e) => { 
-    e.preventDefault();
+  handleSubmit = event => { 
+    event.preventDefault();
     const idea = this.state
     this.props.addIdea(idea)
     this.setState({
@@ -60,7 +59,7 @@ render() {
   }
 }
 
-export default connect(null, { AddIdea })(addIdea);
+export default connect(null, { AddIdea })(AddIdea);
   
 
 
