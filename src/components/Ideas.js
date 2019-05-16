@@ -1,13 +1,22 @@
-import React from 'react';
-import Target from '../targets.jpg';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {fetchIdeas, deleteIdea } from '../actions/ideas';
 
-const Ideas = ({ ideas }) => {
-  const renderIdeas = ideas.map(idea => 
+class Ideas extends Component {
+
+  componentDidMount() {
+    this.props.fetchIdeas()
+  }
+}
+
+render() {
+  const renderIdeas = this.props.ideas.map =>
     <div className="brainstorm card" key={idea.id}>
       <img src={Target} alt="target"/>
       <div className="card-content">
         {/* <Link to={'/' + idea.id}> */}
         <span className="card-title purple-text">{ idea.title }</span>
+        <span onClick={() => this.props.deleteIdea(idea.id)}>X</span>
         {/* </Link> */}
         <p>{ idea.body }</p>
       </div>
@@ -20,5 +29,9 @@ const Ideas = ({ ideas }) => {
     </div>
   )
 }
+}
 
-export default Ideas;
+// const Ideas = ({ ideas }) => {
+  
+
+  export default connect(state => ({ideas: state.ideas}), { fetchIdeas, deleteIdea })(Ideas);
