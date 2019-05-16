@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
 import Ideas from './components/Ideas';
-import IdeaService from './services/IdeaService';
 import AddIdea from './components/AddIdea';
-// import store from './index';
 import './App.css';
+// import IdeaService from './services/IdeaService';
 
 class App extends Component {
-  constructor() {
-    super()
+  // constructor() {
+  //   super()
 
-    this.state = {
-      ideas: []
-    }
-  }
+  //   this.state = {
+  //     ideas: []
+  //   }
+  // }
 
-  componentDidMount() {
-    IdeaService.fetchIdeas().then(ideas => this.setState({ ideas })
-    )
-  }
+  // componentDidMount() {
+  //   IdeaService.fetchIdeas().then(ideas => this.setState({ ideas })
+  //   )
+  // }
 
-  addIdea = idea => {
-    IdeaService.createIdea(idea).then(idea => this.setState({
-      ideas: this.state.ideas.concat(idea)
-    }))
-  }
+  // addIdea = idea => {
+  //   IdeaService.createIdea(idea).then(idea => this.setState({
+  //     ideas: this.state.ideas.concat(idea)
+  //   }))
+  // }
 
   render() {
     // console.log(this.state.ideas)
@@ -39,7 +38,7 @@ class App extends Component {
             <AddIdea addIdea={this.addIdea} />
           </div>
           <div className="ideas collection">
-          <Ideas ideas={this.state.ideas} />
+          <Ideas ideas={this.props.ideas} />
         </div>
           {/* <Idea /> */}
         </div>

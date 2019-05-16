@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addIdea } from '../actions/ideas;'
 
 class AddIdea extends Component {
   constructor(props) {
@@ -17,9 +19,11 @@ class AddIdea extends Component {
       [name]: value
     })
   }
+
   handleSubmit = (e) => { 
     e.preventDefault();
-    this.props.addIdea(this.state)
+    const idea = this.state
+    this.props.addIdea(idea)
     this.setState({
         title: '',
         body: ''
@@ -56,7 +60,7 @@ render() {
   }
 }
 
-export default AddIdea;
+export default connect(null, { AddIdea })(addIdea);
   
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {fetchIdeas, deleteIdea } from '../actions/ideas';
+import { fetchIdeas, deleteIdea } from '../actions/ideas';
 
 class Ideas extends Component {
 
@@ -23,15 +23,18 @@ render() {
     </div>
   )
 
-  return (
-    <div>
-      { renderIdeas }
-    </div>
-  )
-}
+    return (
+      <div>
+        { renderIdeas }
+      </div>
+    )
+  }
 }
 
 // const Ideas = ({ ideas }) => {
   
-
-  export default connect(state => ({ideas: state.ideas}), { fetchIdeas, deleteIdea })(Ideas);
+export default connect(
+  state => ({
+    ideas: state.ideas}), 
+    { fetchIdeas, deleteIdea }
+    )(Ideas);
