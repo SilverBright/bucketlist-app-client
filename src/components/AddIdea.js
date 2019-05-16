@@ -4,7 +4,7 @@ import { addIdea } from '../actions/ideas';
 
 class AddIdea extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       title: '',
@@ -21,7 +21,7 @@ class AddIdea extends Component {
 
   handleSubmit = event => { 
     event.preventDefault();
-    const idea = this.state
+    const idea = this.state;
     this.props.addIdea(idea)
     this.setState({
         title: '',
@@ -59,7 +59,7 @@ render() {
   }
 }
 
-export default connect(null, { AddIdea })(AddIdea);
+export default connect(null, { addIdea })(AddIdea);
   
 
 

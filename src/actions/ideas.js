@@ -9,10 +9,10 @@ const successfullIdeasFetch = ideas => {
   }
 }
 
-const successfullyAddedIdea = ideas => {
+const successfullyAddedIdea = idea => {
   return {
     type: 'SUCCESSFULLY_ADDED_IDEA',
-    ideas
+    idea
   }
 }
 
