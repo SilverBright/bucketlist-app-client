@@ -8,8 +8,7 @@ class Ideas extends Component {
   componentDidMount() {
     this.props.fetchIdeas()
   }
-
-
+  
 render() {
   const renderIdeas = this.props.ideas.map(idea =>
     <div className="brainstorm card" key={idea.id}>
@@ -32,7 +31,6 @@ render() {
     )
   }
 }
-
   
 export default connect(
   state => ({

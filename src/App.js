@@ -33,7 +33,6 @@ export default App;
 
   // constructor() {
   //   super()
-
   //   this.state = {
   //     ideas: []
   //   }
