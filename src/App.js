@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Ideas from './components/Ideas';
 import AddIdea from './components/AddIdea';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-// import IdeaService from './services/IdeaService';
 
 
 class App extends Component {
