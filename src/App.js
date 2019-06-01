@@ -6,8 +6,9 @@ import About from './components/About'
 import Contact from './components/Contact'
 import './App.css';
 
-class App extends Component {
-  render() {
+const App = () => {
+// class App extends Component {
+  // render() {
     return (
       <BrowserRouter>
         <div className="App">
@@ -21,6 +22,6 @@ class App extends Component {
       </BrowserRouter>
     );
   }
-}
+// }
 
 export default App;

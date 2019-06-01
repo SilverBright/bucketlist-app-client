@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Ideas from '../components/Ideas';
 import AddIdea from '../components/AddIdea';
 
-class  Home extends Component {
+class Home extends Component {
   render() {
     return (
       <div className="container">
