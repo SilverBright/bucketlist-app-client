@@ -8,9 +8,9 @@ const Navbar = () => {
         <a className="brand-logo">Brainstorm</a>
         <ul>
           {/* Link to provides an async update to each of the routes */}
-          <li><Link to="/">Home Page</Link></li>
-          <li><Link to="/about">About Page</Link></li>
-          <li><Link to="/contact">Contact Page</Link></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
         </ul>
       </div>
     </nav>
