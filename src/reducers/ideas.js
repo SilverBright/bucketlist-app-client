@@ -7,7 +7,7 @@ export default (state = [], action) => {
     case "SUCCESSFULLY_ADDED_IDEA":
       return state.concat(action.idea)
 
-    case "SUCCESSFUL_IDEA_DELETION":
+    case "SUCCESSFULLY_DELETE_IDEA":
       return state.filter(idea => idea.id !== action.ideaId)
 
     default: 

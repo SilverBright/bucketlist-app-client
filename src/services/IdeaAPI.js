@@ -1,8 +1,7 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
 //fetch ideas
-const IdeaAPI = {
-  //fetchIdeas() 
+const IdeaAPI = { 
   fetchIdeas() {
     return fetch(`${API_URL}/ideas`)
       .then(response => response.json())

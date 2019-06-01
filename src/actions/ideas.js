@@ -18,7 +18,7 @@ const successfullyAddedIdea = idea => {
 
 const succefullyDeletedIdea = ideaId => {
   return { 
-    type: "SUCCESSFUL_IDEA_DELETION",
+    type: "SUCCESSFULLY_DELETE_IDEA",
     ideaId
   }
 }
