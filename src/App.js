@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
+import Idea from './components/Idea';
 
 import './App.css';
 
@@ -20,7 +21,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
-            <Route path="/:idea_id" component={} />
+            <Route path="/:idea_id" component={Idea} />
           </div>
           <div className="ideas-app container">
             {/* <h1 className="center -text">BRAINSTORM</h1> */}
