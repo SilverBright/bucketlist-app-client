@@ -4,6 +4,7 @@ import AddIdea from './components/AddIdea';
 import './App.css';
 // import IdeaService from './services/IdeaService';
 
+
 class App extends Component {
   render() {
     return (
@@ -13,7 +14,7 @@ class App extends Component {
           {/* <Navbar /> */}
         </div>
          <div className="ideas-app container">
-          <h1 className="center blue-text">BRAINSTORM</h1>
+          <h1 className="center -text">BRAINSTORM</h1>
           <div>
             <AddIdea addIdea={this.addIdea} />
           </div>
@@ -32,7 +33,6 @@ export default App;
 
   // constructor() {
   //   super()
-
   //   this.state = {
   //     ideas: []
   //   }

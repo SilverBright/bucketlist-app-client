@@ -42,7 +42,6 @@ render() {
            placeholder="Idea Title"
          />
 
-
          <label htmlFor="idea_body">Idea Body</label>
           <input
            type="text"
@@ -52,9 +51,8 @@ render() {
            placeholder="Idea Body"
          />
         <br/>
-         <button>Add Your Idea</button>
+         <button>Brainstorm!</button>
        </form>
-    
     )
   }
 }
