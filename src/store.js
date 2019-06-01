@@ -5,6 +5,7 @@ import currentIdea from './reducers/currentIdea';
 import ideaFormData from './reducers/ideaFormData';
 import ideas from './reducers/ideas';
 
+// combine all the reducers
 const reducers = combineReducers({
   appTransactions,
   currentIdea,
@@ -12,17 +13,7 @@ const reducers = combineReducers({
   ideas,
 })
 
-
-// const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-// const store = createStore(
-//   reducers,
-//   composeEnhancer(applyMiddleware(ReduxThunk)),
-// );
-
-
-
-// const middleware = [ReduxThunk];
+// the store manages all of the state
 
 const store = createStore(
   reducers,
