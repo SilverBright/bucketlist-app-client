@@ -1,7 +1,6 @@
 import React from 'react';
 
-// props are from the router
-const Contact = (props) => {
+const Contact = () => {
   return (
     <div className="container">
       <h4 className="center">Contact</h4>

@@ -33,25 +33,25 @@ render() {
     return (
        <form onSubmit={this.handleSubmit}>
 
-         <label htmlFor="idea_title">Idea Title</label>
+         <label htmlFor="idea_title"></label>
           <input
            type="text"
            name="title"
            value={this.state.title}
            onChange={this.handleChange}
-           placeholder="Idea Title"
+           placeholder="brainstorm title"
          />
 
-         <label htmlFor="idea_body">Idea Body</label>
+         <label htmlFor="idea_body"></label>
           <input
            type="text"
            name="body"
            value={this.state.body}
            onChange={this.handleChange}
-           placeholder="Idea Body"
+           placeholder="describe it"
          />
         <br/>
-         <button>Brainstorm!</button>
+         <button>save it!</button>
        </form>
     )
   }
