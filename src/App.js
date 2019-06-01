@@ -1,29 +1,38 @@
 import React, { Component } from 'react';
 import Ideas from './components/Ideas';
 import AddIdea from './components/AddIdea';
+import Navbar from './components/Navbar';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Home from './components/Home'
+import About from './components/About'
+import Contact from './components/Contact'
+
+
 import './App.css';
-// import IdeaService from './services/IdeaService';
 
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="navbar">
-          <h4>Navbar</h4> 
-          {/* <Navbar /> */}
-        </div>
-         <div className="ideas-app container">
-          <h1 className="center -text">BRAINSTORM</h1>
-          <div>
-            <AddIdea addIdea={this.addIdea} />
+      <BrowserRouter>
+        <div className="App">
+          <div className="navbar">
+            <Navbar />
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+            </div>
+          <div className="ideas-app container">
+            {/* <h1 className="center -text">BRAINSTORM</h1> */}
+            <div>
+              <AddIdea addIdea={this.addIdea} />
+            </div>
+            <div className="ideas collection">
+              <Ideas ideas={this.props.ideas} />
+            </div>
           </div>
-          <div className="ideas collection">
-          <Ideas ideas={this.props.ideas} />
         </div>
-          {/* <Idea /> */}
-        </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }
