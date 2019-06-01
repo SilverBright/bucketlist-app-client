@@ -15,8 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="navbar">
-          <h4>Navbar</h4> 
-          {/* <Navbar /> */}
+          <Navbar />
         </div>
          <div className="ideas-app container">
           <h1 className="center -text">BRAINSTORM</h1>
