@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchIdeas, deleteIdea } from '../actions/ideas';
+import { fetchIdeas, deleteIdea } from '../actions/ideaActions';
 import Target from '../target.jpg';
 
 class Ideas extends Component {
