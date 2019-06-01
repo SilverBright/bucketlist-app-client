@@ -8,6 +8,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Idea from './components/Idea';
 
+
 import './App.css';
 
 
