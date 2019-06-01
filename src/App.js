@@ -20,6 +20,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
+            <Route path="/:idea_id" component={} />
           </div>
           <div className="ideas-app container">
             {/* <h1 className="center -text">BRAINSTORM</h1> */}
