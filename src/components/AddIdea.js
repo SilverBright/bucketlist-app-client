@@ -51,7 +51,7 @@ render() {
            placeholder="describe it"
          />
         <br/>
-         <button>Submit Brainstorm!</button>
+         <button>save it!</button>
        </form>
     )
   }
