@@ -13,21 +13,23 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="navbar">
-          <Navbar />
-        </div>
-         <div className="ideas-app container">
-          <h1 className="center -text">BRAINSTORM</h1>
-          <div>
-            <AddIdea addIdea={this.addIdea} />
+      <BrowserRouter>
+        <div className="App">
+          <div className="navbar">
+            <Navbar />
+            <Route post="/" component={Home} />
           </div>
-          <div className="ideas collection">
-          <Ideas ideas={this.props.ideas} />
+          <div className="ideas-app container">
+            <h1 className="center -text">BRAINSTORM</h1>
+            <div>
+              <AddIdea addIdea={this.addIdea} />
+            </div>
+            <div className="ideas collection">
+              <Ideas ideas={this.props.ideas} />
+            </div>
+          </div>
         </div>
-          {/* <Idea /> */}
-        </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }
