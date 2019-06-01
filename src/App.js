@@ -22,7 +22,7 @@ class App extends Component {
             <Route path="/contact" component={Contact} />
           </div>
           <div className="ideas-app container">
-            <h1 className="center -text">BRAINSTORM</h1>
+            {/* <h1 className="center -text">BRAINSTORM</h1> */}
             <div>
               <AddIdea addIdea={this.addIdea} />
             </div>
