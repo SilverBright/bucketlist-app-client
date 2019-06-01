@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-
 import Navbar from './components/Navbar';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
-
-
 import './App.css';
-
 
 class App extends Component {
   render() {
@@ -23,7 +19,6 @@ class App extends Component {
             </div>
            </div>
       </BrowserRouter>
-     
     );
   }
 }
