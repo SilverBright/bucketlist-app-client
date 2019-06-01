@@ -1,4 +1,4 @@
-import IdeaService from '../services/IdeaService';
+import IdeaAPI from '../services/IdeaAPI';
 import { makeFetchRequest, finishFetchRequest, unsuccessfulFetchRequest } from './actionTypes';
 
 // Synchronous Action Creators
@@ -27,7 +27,7 @@ const succefullyDeletedIdea = ideaId => {
 export const fetchIdeas = () => {
   return dispatch => {
     dispatch(makeFetchRequest())
-    IdeaService.fetchIdeas()
+    IdeaAPI.fetchIdeas()
       .then(ideas => {
         dispatch(finishFetchRequest())
         dispatch(successfullIdeasFetch(ideas))
@@ -41,7 +41,7 @@ export const fetchIdeas = () => {
 export const addIdea = idea => { 
   return dispatch => {
     dispatch(makeFetchRequest());
-    IdeaService.createIdea(idea)
+    IdeaAPI.createIdea(idea)
       .then(idea => {
         dispatch(finishFetchRequest());
         dispatch(successfullyAddedIdea(idea));
@@ -53,7 +53,7 @@ export const addIdea = idea => {
 export const deleteIdea = ideaId => { 
   return dispatch => {
     dispatch(makeFetchRequest());
-    IdeaService.deleteIdea(ideaId)
+    IdeaAPI.deleteIdea(ideaId)
       .then(response => {
         if (response.ok) {
           dispatch(finishFetchRequest());

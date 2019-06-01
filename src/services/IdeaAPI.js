@@ -1,7 +1,7 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
 //fetch ideas
-const IdeaService = {
+const IdeaAPI = {
   //fetchIdeas() 
   fetchIdeas() {
     return fetch(`${API_URL}/ideas`)
@@ -35,4 +35,4 @@ deleteIdea(ideaId) {
   }
 };
  
-export default IdeaService;
+export default IdeaAPI;

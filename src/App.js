@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Ideas from './components/Ideas';
 import AddIdea from './components/AddIdea';
 import './App.css';
-import IdeaService from './services/IdeaService';
+// import IdeaService from './services/IdeaService';
 
 
 class App extends Component {
