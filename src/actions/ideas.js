@@ -1,5 +1,5 @@
 import IdeaService from '../services/IdeaService';
-import { makeFetchRequest, finishFetchRequest, unsuccessfulFetchRequest } from './appTransactions';
+import { makeFetchRequest, finishFetchRequest, unsuccessfulFetchRequest } from './actionTypes';
 
 // Synchronous Action Creators
 const successfullIdeasFetch = ideas => {
