@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchIdeas, deleteIdea } from '../actions/ideaActions';
 import Target from '../target.jpg';
-import { Link } from 'react-router-dom';
 
 class Ideas extends Component {
 
@@ -15,9 +14,7 @@ render() {
     <div className="brainstorm card" key={idea.id}>
       <img src={ Target } alt="target"/>
       <div className="card-content">
-        <Link to={'/' + idea.id }>
           <span className="card-title purple-text">{ idea.title }</span>
-        </Link>
         <p>{ idea.body }</p>
         <br/>
         <button onClick={() => this.props.deleteIdea(idea.id)}>Delete Idea</button>
