@@ -64,8 +64,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, { addIdea })(AddIdea);
-  
-
-
-
-
