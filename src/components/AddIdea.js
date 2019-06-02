@@ -25,7 +25,7 @@ class AddIdea extends Component {
     const idea = this.state;
     this.props.addIdea(idea)
     this.setState({
-        title: '',
+        // title: '',
         body: ''
     })
   }
@@ -34,14 +34,14 @@ render() {
     return (
        <form onSubmit={this.handleSubmit}>
 
-         <label htmlFor="idea_title"></label>
+         {/* <label htmlFor="idea_title"></label>
           <input
            type="text"
            name="title"
            value={this.state.title}
            onChange={this.handleChange}
            placeholder="brainstorm title"
-         />
+         /> */}
 
          <label htmlFor="idea_body"></label>
           <input
