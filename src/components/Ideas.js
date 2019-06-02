@@ -10,7 +10,7 @@ class Ideas extends Component {
   }
   
 render() {
-  const renderIdeas = this.props.ideas.map(idea =>
+  const renderIdeas = this.props.ideas.concat().reverse().map(idea =>
     <div className="bucketlist card" key={idea.id}>
       <img src={ Target } alt="target"/>
       <div className="card-small">
