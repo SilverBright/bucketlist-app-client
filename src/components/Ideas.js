@@ -14,7 +14,7 @@ render() {
     <div className="brainstorm card" key={idea.id}>
       <img src={ Target } alt="target"/>
       <div className="card-content">
-          <span className="card-title purple-text">{ idea.title }</span>
+          {/* <span className="card-title purple-text">{ idea.title }</span> */}
         <p>{ idea.body }</p>
         <br/>
         <button onClick={() => this.props.deleteIdea(idea.id)}>delete it!</button>
