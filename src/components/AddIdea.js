@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addIdea } from '../actions/ideaActions';
+import Button from './Button';
 
 class AddIdea extends Component {
   constructor(props) {
@@ -51,13 +52,18 @@ render() {
            placeholder="describe it"
          />
         <br/>
-         <button>save it!</button>
+         {/* <button>save it!</button> */}
+         <Button />
        </form>
     )
   }
 }
 
-export default connect(null, { addIdea })(AddIdea);
+const mapStateToProps = (state) => {
+  return { ideas: state.ideas}
+};
+
+export default connect(mapStateToProps, { addIdea })(AddIdea);
   
 
 
