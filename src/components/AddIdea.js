@@ -34,15 +34,6 @@ render() {
     return (
        <form onSubmit={this.handleSubmit}>
 
-         {/* <label htmlFor="idea_title"></label>
-          <input
-           type="text"
-           name="title"
-           value={this.state.title}
-           onChange={this.handleChange}
-           placeholder="brainstorm title"
-         /> */}
-
          <label htmlFor="idea_body"></label>
           <input
            type="text"
