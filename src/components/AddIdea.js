@@ -49,7 +49,7 @@ render() {
            name="body"
            value={this.state.body}
            onChange={this.handleChange}
-           placeholder="describe it"
+           placeholder="add an item to your bucketlist"
          />
         <br/>
          {/* <button>save it!</button> */}
