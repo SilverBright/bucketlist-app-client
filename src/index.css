@@ -13,18 +13,18 @@ code {
     monospace;
 }
 
-.ideas .brainstorm img{
+.ideas .bucketlist img{
   position: absolute;
-  top: 20px;
+  top: 0px;
   left: -30px;
-  opacity: 0.3;
-  width: 150px;
-  height: 150px
+  opacity: 0.4;
+  width: 100px;
+  height: 75px
 }
 
-.ideas .brainstorm{
+.ideas .bucketlist{
   overflow: hidden;
-  padding-left: 10px;
+  padding-left: 1px;
 } 
 
 input {

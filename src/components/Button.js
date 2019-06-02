@@ -4,7 +4,7 @@ const Button = () => {
   // console.log(props.style);
   return(
       <button>
-        Save it!
+        Great idea!
       </button>)
 }
 

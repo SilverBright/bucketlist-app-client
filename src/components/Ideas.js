@@ -11,13 +11,13 @@ class Ideas extends Component {
   
 render() {
   const renderIdeas = this.props.ideas.map(idea =>
-    <div className="brainstorm card" key={idea.id}>
+    <div className="bucketlist card" key={idea.id}>
       <img src={ Target } alt="target"/>
-      <div className="card-content">
+      <div className="card-small">
           {/* <span className="card-title purple-text">{ idea.title }</span> */}
-        <p>{ idea.body }</p>
+        { idea.body }
         <br/>
-        <button onClick={() => this.props.deleteIdea(idea.id)}>delete it!</button>
+        <button onClick={() => this.props.deleteIdea(idea.id)}>bad idea</button>
       </div>
     </div>
   )
