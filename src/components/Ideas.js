@@ -15,9 +15,7 @@ render() {
     <div className="bucketlist card" key={idea.id}>
       <img src={ Target } alt="target"/>
         <div className="card-content-small">
-        <Link to={'/' + idea.id}>
       <span className="card-title purple-text">{ idea.body }</span>
-      </Link>
         <br/>
         <button onClick={() => this.props.deleteIdea(idea.id)}>bad idea</button>
       </div>
