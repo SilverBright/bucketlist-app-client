@@ -5,10 +5,13 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import FAQ from './components/FAQ';
+import Paper from './paper.jpg';
 import './App.css';
 
 const App = () => {
+ 
     return (
+      
       <BrowserRouter>
         <div className="App">
           <div className="navbar">

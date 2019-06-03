@@ -7,7 +7,8 @@ class Home extends Component {
     return (
       <div className="container">
         <h4 className="center">Welcome to Bucketlist</h4>
-          <h5>Things to do before you DIE</h5>
+          <h5>Things to do before you</h5>
+          <h5>DIE</h5>
           <p>Start your list below</p>
           <div className="ideas-app container">
             <div>

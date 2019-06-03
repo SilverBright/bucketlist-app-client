@@ -4,8 +4,6 @@ const Contact = () => {
   return (
     <div className="container">
       <h4 className="center">Contact</h4>
-    
-
     <div class="row">
     <div class center="col s12 m6">
       <div class="card light-blue darken-1">
