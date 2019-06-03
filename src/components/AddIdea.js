@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addIdea } from '../actions/ideaActions';
-import Button from './Button';
+
 
 class AddIdea extends Component {
   constructor(props) {
@@ -43,8 +43,7 @@ render() {
            placeholder="add an item to your bucketlist"
          />
         <br/>
-         {/* <button>save it!</button> */}
-         <Button />
+         <button>add your idea</button>
        </form>
     )
   }
