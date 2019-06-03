@@ -17,7 +17,7 @@ render() {
         <div className="card-content-small">
       <span className="card-title purple-text">{ idea.body }</span>
         <br/>
-        <button onClick={() => this.props.deleteIdea(idea.id)}>bad idea</button>
+        <button onClick={() => this.props.deleteIdea(idea.id)}>Done!</button>
       </div>
     </div>
   )

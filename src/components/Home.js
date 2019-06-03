@@ -6,8 +6,8 @@ class Home extends Component {
   render() {
     return (
       <div className="container">
-        <h4 className="center">Home</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestias voluptatem saepe ut, asperiores numquam? Unde iure obcaecati eos maiores magnam hic, nesciunt eius aspernatur, est aut quis porro nisi.</p> 
+        <h4 className="center">Welcome</h4>
+          <h5>Things to do before you kick that bucket.</h5>
           <div className="ideas-app container">
             <div>
               <AddIdea addIdea={this.addIdea} />
