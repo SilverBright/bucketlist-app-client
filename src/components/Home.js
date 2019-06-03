@@ -7,7 +7,7 @@ class Home extends Component {
     return (
       <div className="container">
         <h4 className="center">Welcome</h4>
-          <h5>Things to do before you kick that bucket.</h5>
+          <h5>Things to do before you DIE</h5>
           <div className="ideas-app container">
             <div>
               <AddIdea addIdea={this.addIdea} />
@@ -22,5 +22,3 @@ class Home extends Component {
 }
 
 export default Home;
-
-
