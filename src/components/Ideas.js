@@ -10,14 +10,13 @@ class Ideas extends Component {
   }
   
 render() {
-  const renderIdeas = this.props.ideas.map(idea =>
-    <div className="brainstorm card" key={idea.id}>
+  const renderIdeas = this.props.ideas.concat().reverse().map(idea =>
+    <div className="bucketlist card" key={idea.id}>
       <img src={ Target } alt="target"/>
-      <div className="card-content">
-          {/* <span className="card-title purple-text">{ idea.title }</span> */}
-        <p>{ idea.body }</p>
+        <div className="card-content-small">
+      <span className="card-title blue-text text-darken-2">{ idea.body }</span>
         <br/>
-        <button onClick={() => this.props.deleteIdea(idea.id)}>delete it!</button>
+        <button onClick={() => this.props.deleteIdea(idea.id)}>Done!</button>
       </div>
     </div>
   )

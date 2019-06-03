@@ -6,8 +6,10 @@ class Home extends Component {
   render() {
     return (
       <div className="container">
-        <h4 className="center">Home</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestias voluptatem saepe ut, asperiores numquam? Unde iure obcaecati eos maiores magnam hic, nesciunt eius aspernatur, est aut quis porro nisi.</p> 
+        <h3 className="center" text="bold">Welcome to Bucketlist</h3>
+          <h5>Things to do before you</h5>
+          <h5>DIE</h5>
+          <p>Start your list below</p>
           <div className="ideas-app container">
             <div>
               <AddIdea addIdea={this.addIdea} />
@@ -22,5 +24,3 @@ class Home extends Component {
 }
 
 export default Home;
-
-

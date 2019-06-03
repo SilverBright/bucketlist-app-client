@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addIdea } from '../actions/ideaActions';
-import Button from './Button';
+
 
 class AddIdea extends Component {
   constructor(props) {
@@ -34,26 +34,16 @@ render() {
     return (
        <form onSubmit={this.handleSubmit}>
 
-         {/* <label htmlFor="idea_title"></label>
-          <input
-           type="text"
-           name="title"
-           value={this.state.title}
-           onChange={this.handleChange}
-           placeholder="brainstorm title"
-         /> */}
-
          <label htmlFor="idea_body"></label>
           <input
            type="text"
            name="body"
            value={this.state.body}
            onChange={this.handleChange}
-           placeholder="describe it"
+           placeholder="add an item to your bucketlist"
          />
         <br/>
-         {/* <button>save it!</button> */}
-         <Button />
+         <button>add your idea</button>
        </form>
     )
   }
