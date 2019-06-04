@@ -30,11 +30,11 @@ class AddIdea extends Component {
   handleSubmit = event => { 
     event.preventDefault();
     const idea = this.state;
-    this.props.addIdea(idea)
     if (idea.body === '') {
       alert("field cannont be blank");
     } else {
-    console.log(idea)
+    this.props.addIdea(idea)
+    // console.log(idea)
     this.setState({
         body: ''
     })
