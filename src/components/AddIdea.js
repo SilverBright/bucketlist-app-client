@@ -34,8 +34,8 @@ class AddIdea extends Component {
 render() {
     return (
        <form onSubmit={this.handleSubmit}>
-
-         <label htmlFor="idea_body"></label>
+        <div className="form">
+         <label htmlFor="idea-body"></label>
           <input
            type="text"
            name="body"
@@ -45,6 +45,7 @@ render() {
          />
         <br/>
          <button>add your idea</button>
+         </div>
        </form>
     )
   }
