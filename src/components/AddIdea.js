@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addIdea } from '../actions/ideaActions';
 
-
 class AddIdea extends Component {
   constructor(props) {
     super(props);
     this.state = {
       body: ''
-    }
+    };
   }
 
   handleChange = event => {
@@ -18,27 +17,18 @@ class AddIdea extends Component {
     })
   }
 
-
-//   if (this.state.title === "") {
-//     alert("??");
-//   } else {
-//     this.props.addTodo(this.state.title);
-//     this.setState({ title: "" });
-//   }
-// };
-
   handleSubmit = event => { 
     event.preventDefault();
     const idea = this.state;
-    if (idea.body === '') {
-      alert("field cannont be blank");
-    } else {
-    this.props.addIdea(idea)
-    // console.log(idea)
-    this.setState({
+      if (idea.body === '') {
+        alert("field cannont be blank");
+      } else {
+      this.props.addIdea(idea)
+      // console.log(idea)
+      this.setState({
         body: ''
-    })
-  }
+      });
+    }
   }
 
 render() {
