@@ -2,15 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addIdea } from '../actions/ideaActions';
 
-
 class AddIdea extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      title: '',
       body: ''
-    }
+    };
   }
 
   handleChange = event => {
@@ -23,19 +20,22 @@ class AddIdea extends Component {
   handleSubmit = event => { 
     event.preventDefault();
     const idea = this.state;
-    this.props.addIdea(idea)
-    this.setState({
-        // title: '',
+      if (idea.body === '') {
+        alert("field cannont be blank");
+      } else {
+      this.props.addIdea(idea)
+      this.setState({
         body: ''
-    })
+      });
+    }
   }
 
 render() {
     return (
        <form onSubmit={this.handleSubmit}>
-
-         <label htmlFor="idea_body"></label>
-          <input
+        <div className="form">
+         <label htmlFor="idea-body"></label>
+          <input autoComplete="off"
            type="text"
            name="body"
            value={this.state.body}
@@ -44,7 +44,8 @@ render() {
          />
         <br/>
          <button>add your idea</button>
-       </form>
+        </div>
+      </form>
     )
   }
 }

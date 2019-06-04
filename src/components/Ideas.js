@@ -15,11 +15,11 @@ render() {
       <img src={ Target } alt="target"/>
         <div className="card-content-small">
       <span className="card-title blue-text text-darken-2">{ idea.body }</span>
-        <br/>
-        <button onClick={() => this.props.deleteIdea(idea.id)}>Done!</button>
-      </div>
+      <br/>
+      <button onClick={() => this.props.deleteIdea(idea.id)}>completed</button>
     </div>
-  )
+  </div>
+)
 
     return (
       <div>
