@@ -6,9 +6,7 @@ import { addIdea } from '../actions/ideaActions';
 class AddIdea extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      title: '',
       body: ''
     }
   }
@@ -20,14 +18,27 @@ class AddIdea extends Component {
     })
   }
 
+
+//   if (this.state.title === "") {
+//     alert("??");
+//   } else {
+//     this.props.addTodo(this.state.title);
+//     this.setState({ title: "" });
+//   }
+// };
+
   handleSubmit = event => { 
     event.preventDefault();
     const idea = this.state;
     this.props.addIdea(idea)
+    if (idea.body === '') {
+      alert("field cannont be blank");
+    } else {
+    console.log(idea)
     this.setState({
-        // title: '',
         body: ''
     })
+  }
   }
 
 render() {
