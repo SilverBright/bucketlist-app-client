@@ -1,6 +1,5 @@
-export default (state = {
-  title: '', 
-  body: ''
-}, action) => {
-  return state
-}
+// export default (state = {
+//   body: ''
+// }, action) => {
+//   return state
+// }

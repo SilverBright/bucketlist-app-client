@@ -8,18 +8,16 @@ import FAQ from './components/FAQ';
 import './App.css';
 
 const App = () => {
- 
-    return (
-      
-      <BrowserRouter>
-        <div className="App">
-          <div className="navbar">
-            <Navbar />
-              <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/FAQ" component={FAQ} />
-            </div>
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <div className="navbar">
+          <Navbar />
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/FAQ" component={FAQ} />
+          </div>
         </div>
       </BrowserRouter>
     );

@@ -6,13 +6,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
 
-
-
-// const store = createStore(idea);
-// console.log(store)
-// export default store;
-
-// ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

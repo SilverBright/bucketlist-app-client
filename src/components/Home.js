@@ -11,13 +11,13 @@ class Home extends Component {
           <h5>DIE</h5>
           <p>Start your list below</p>
           <div className="ideas-app container">
-            <div>
-              <AddIdea addIdea={this.addIdea} />
-            </div>
-            <div className="ideas collection">
-              <Ideas ideas={this.props.ideas} />
-            </div>
+          <div>
+            <AddIdea addIdea={this.addIdea} />
           </div>
+          <div className="ideas collection">
+            <Ideas ideas={this.props.ideas} />
+          </div>
+        </div>
       </div>  
     );
   }

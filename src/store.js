@@ -1,16 +1,16 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk' 
 import appTransactions from './reducers/appTransactions';
-import currentIdea from './reducers/currentIdea';
-import ideaFormData from './reducers/ideaFormData';
+// import currentIdea from './reducers/currentIdea';
+// import ideaFormData from './reducers/ideaFormData';
 import ideas from './reducers/ideas';
 // import { composeWithDevTools } from 'redux-devtools-extension';
 
 // combine all the reducers
 const reducers = combineReducers({
   appTransactions,
-  currentIdea,
-  ideaFormData,
+  // currentIdea,
+  // ideaFormData,
   ideas,
 })
 

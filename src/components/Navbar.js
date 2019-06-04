@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="container">
         <a className="brand-logo bold">bucketlist</a>
         <ul>
-          {/* Link to provides an async update to each of the routes */}
+          {/* "Link to" provides an async update to each of the routes */}
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/contact">Contact</Link></li>
@@ -17,6 +17,5 @@ const Navbar = () => {
     </nav>
   )
 }
-
 
 export default Navbar;
