@@ -50,8 +50,11 @@ render() {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { ideas: state.ideas}
-};
+export default connect(null, { addIdea })(AddIdea);
 
-export default connect(mapStateToProps, { addIdea })(AddIdea);
+// const mapStateToProps = (state) => {
+//   console.log(state)
+//   return { ideas: state.ideas}
+// };
+
+// export default connect(mapStateToProps, { addIdea })(AddIdea);

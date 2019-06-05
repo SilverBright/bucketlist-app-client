@@ -7,6 +7,7 @@ const IdeaAPI = {
       .then(response => response.json())
   },
 
+  // create an idea
   createIdea(idea) {
     const request = {
       method: 'POST',
@@ -22,6 +23,7 @@ const IdeaAPI = {
       .then(response => response.json())
   },
 
+// delete an idea
 deleteIdea(ideaId) {
   const request = {
     method: 'DELETE',
