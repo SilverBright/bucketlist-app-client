@@ -28,9 +28,7 @@ render() {
     )
   }
 }
-  
-export default connect(
-  state => ({
-    ideas: state.ideas}), 
-    { fetchIdeas, deleteIdea }
-    )(Ideas);
+
+// the mapStateToProps() method is executed with each change to the store's state
+// Shorten mapStateToProps() down to an anonymous arrow function and pass it directly into connect()
+export default connect(state => ({ ideas: state.ideas }), { fetchIdeas, deleteIdea })(Ideas);

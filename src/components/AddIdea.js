@@ -50,11 +50,6 @@ render() {
   }
 }
 
-export default connect(null, { addIdea })(AddIdea);
-
-// const mapStateToProps = (state) => {
-//   console.log(state)
-//   return { ideas: state.ideas}
-// };
-
-// export default connect(mapStateToProps, { addIdea })(AddIdea);
+// the mapStateToProps() method is executed with each change to the store's state
+// Shorten mapStateToProps() down to an anonymous arrow function and pass it directly into connect()
+export default connect(state => ({ ideas: state.ideas }), { addIdea })(AddIdea);

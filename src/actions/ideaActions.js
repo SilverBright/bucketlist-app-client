@@ -3,8 +3,6 @@ import { makeFetchRequest, finishFetchRequest, unsuccessfulFetchRequest } from '
 
 // Synchronous Action Creators
 
-// These are the funtions that will go to the reducer
-
 // will be called when the date has been successfully fetched
 // data will be passed to 'ideas'
 const successfullIdeasFetch = ideas => {

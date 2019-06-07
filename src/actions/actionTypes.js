@@ -1,6 +1,5 @@
 // action types specifically for fetching data from the API
 
-
 // make a fetch request
 export const makeFetchRequest = () => {
   return { type: 'MAKING_API_REQUEST' }
