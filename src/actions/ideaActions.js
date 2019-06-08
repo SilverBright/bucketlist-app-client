@@ -1,7 +1,7 @@
 import IdeaAPI from '../services/IdeaAPI';
 import { makeFetchRequest, finishFetchRequest, unsuccessfulFetchRequest } from './actionTypes';
 
-// Synchronous Action Creators
+// Synchronous Action Creators: instantly returns an action with data ready to go
 
 // will be called when the date has been successfully fetched
 // data will be passed to 'ideas'
@@ -27,11 +27,10 @@ const succefullyDeletedIdea = ideaId => {
   }
 }
 
-// Async Action Creators
-
-// By default, Redux action creators don’t support asynchronous actions like fetching data, 
-// so here’s where we utilise Redux Thunk. Thunk allows you to write action creators that 
-// return a function instead of an action. The inner function can receive the store methods.
+// Async Action Creators: takes some time to get data
+// Middleware (thunk) is required to run async actions
+// Middleware can STOP and MODIFY actions
+// Thunk allows you to write action creators that return a function instead of an action 
 // Thunk will allow us to make async actions so all the action creators activate in the correct order
 
 export const fetchIdeas = () => {
@@ -75,6 +74,7 @@ export const deleteIdea = ideaId => {
     dispatch(makeFetchRequest());
     IdeaAPI.deleteIdea(ideaId)
       .then(response => {
+    //  if (response.true)
         if (response.ok) {
           dispatch(finishFetchRequest());
           dispatch(succefullyDeletedIdea(ideaId));
