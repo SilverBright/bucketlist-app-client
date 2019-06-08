@@ -23,14 +23,14 @@ const IdeaAPI = {
       .then(response => response.json())
   },
 
-// delete an idea
-deleteIdea(ideaId) {
-  const request = {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    }
-  };
+  // delete an idea
+  deleteIdea(ideaId) {
+    const request = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    };
 
     return fetch(`${API_URL}/ideas/${ideaId}`, request)
   }

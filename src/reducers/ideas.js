@@ -6,6 +6,7 @@ export default (state = [], action) => {
       return action.ideas
 
     case "SUCCESSFULLY_ADDED_IDEA":
+      // set the current state to a NEW array
       return state.concat(action.idea)
       // return [ ...state, action.idea] ;
 

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchIdeas, deleteIdea } from '../actions/ideaActions';
+import { getIdeas, deleteIdea } from '../actions/ideaActions';
 import Target from '../target.jpg';
 
 class Ideas extends Component {
 
   componentDidMount() {
-    this.props.fetchIdeas()
+    this.props.getIdeas()
   }
   
 render() {
@@ -31,4 +31,4 @@ render() {
 
 // the mapStateToProps() method is executed with each change to the store's state
 // Shorten mapStateToProps() down to an anonymous arrow function and pass it directly into connect()
-export default connect(state => ({ ideas: state.ideas }), { fetchIdeas, deleteIdea })(Ideas);
+export default connect(state => ({ ideas: state.ideas }), { getIdeas, deleteIdea })(Ideas);
