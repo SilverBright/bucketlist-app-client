@@ -1,7 +1,7 @@
 import IdeaAPI from '../services/IdeaAPI';
-import { makeFetchRequest, finishFetchRequest, unsuccessfulFetchRequest } from './actionTypes';
 
 // Synchronous Action Creators
+
 const successfullIdeasFetch = ideas => {
   return {
     type: 'SUCCESSFUL_IDEAS_FETCH',
@@ -10,6 +10,8 @@ const successfullIdeasFetch = ideas => {
 }
 
 const successfullyAddedIdea = idea => {
+  // console.log(idea)
+  // return an object with a property called 'idea'
   return {
     type: 'SUCCESSFULLY_ADDED_IDEA',
     idea
@@ -17,6 +19,8 @@ const successfullyAddedIdea = idea => {
 }
 
 const succefullyDeletedIdea = ideaId => {
+  // console.log(ideaId)
+  // returns the deleted ID number
   return { 
     type: "SUCCESSFULLY_DELETE_IDEA",
     ideaId
@@ -24,43 +28,34 @@ const succefullyDeletedIdea = ideaId => {
 }
 
 // Async Action Creators
-export const fetchIdeas = () => {
+
+export const getIdeas = () => {
   return dispatch => {
-    dispatch(makeFetchRequest())
-    IdeaAPI.fetchIdeas()
+    return IdeaAPI.fetchIdeas()
       .then(ideas => {
-        dispatch(finishFetchRequest())
         dispatch(successfullIdeasFetch(ideas))
       })
-      .catch(error => {
-        dispatch(unsuccessfulFetchRequest())
-      })
+    .catch(error => console.log(error));
   }
 }
 
 export const addIdea = idea => { 
   return dispatch => {
-    dispatch(makeFetchRequest());
-    IdeaAPI.createIdea(idea)
+    return IdeaAPI.createIdea(idea)
       .then(idea => {
-        dispatch(finishFetchRequest());
         dispatch(successfullyAddedIdea(idea));
       })
-      .catch(error => console.log(error));
+    .catch(error => console.log(error));
   }
 }
 
-export const deleteIdea = ideaId => { 
+export const deleteIdea = ideaId => {
   return dispatch => {
-    dispatch(makeFetchRequest());
-    IdeaAPI.deleteIdea(ideaId)
+    return IdeaAPI.deleteIdea(ideaId)
       .then(response => {
-        if (response.ok) {
-          dispatch(finishFetchRequest());
-          dispatch(succefullyDeletedIdea(ideaId));
-        }
-      })
-      .catch(error => console.log(error));
+      if (response.ok)
+      dispatch(succefullyDeletedIdea(ideaId));
+    })
+    .catch(error => console.log(error));
   }
 }
-

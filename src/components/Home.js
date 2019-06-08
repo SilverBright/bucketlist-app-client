@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Ideas from './Ideas';
 import AddIdea from './AddIdea';
 
+
+
 class Home extends Component {
   render() {
     return (
@@ -12,6 +14,7 @@ class Home extends Component {
           <p>Start your list below</p>
           <div className="ideas-app container">
           <div>
+            {/* state manipulation from addIdea */}
             <AddIdea addIdea={this.addIdea} />
           </div>
           <div className="ideas collection">
