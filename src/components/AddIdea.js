@@ -24,12 +24,12 @@ class AddIdea extends Component {
       if (idea.body === '') {
         alert("field cannont be blank");
       } else {
+      // send local state to the store using addIdea action creators
       this.props.addIdea(idea)
-      // console.log (this.props.ideas)
+      // CLEAR THE FORM!
       this.setState({
         body: ''
       });
-      // console.log (this.state.body)
     }
   }
 
@@ -62,5 +62,3 @@ export default connect(state => ({ ideas: state.ideas }), { addIdea })(AddIdea);
 // As Dan Abramov put it:
 
 // Use React for ephemeral (short-lived) state that doesn’t matter to the app globally and doesn’t mutate in complex ways. For example... a form input state. 
-
-//Use Redux for state that matters globally or is mutated in complex ways. 

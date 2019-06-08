@@ -2,8 +2,9 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk' 
 import ideas from './reducers/ideas';
 
-// combine reducers
+// combine all reducers here
 const reducer = combineReducers({
+  // future reducers
   ideas
 });
 
