@@ -1,11 +1,9 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk' 
-// import appTransactions from './reducers/appTransactions';
 import ideas from './reducers/ideas';
 
 // combine reducers
 const reducer = combineReducers({
-  // appTransactions,
   ideas
 });
 
