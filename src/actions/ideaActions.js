@@ -1,6 +1,7 @@
 import IdeaAPI from '../services/IdeaAPI';
 
-// Synchronous Action Creators
+// SYNCHRONOUS ACTION CREATORS 
+// instantly return an action with data ready to go
 
 const successfullIdeasFetch = ideas => {
   return {
@@ -27,9 +28,12 @@ const succefullyDeletedIdea = ideaId => {
   }
 }
 
-// Async Action Creators
+// ASYNC ACTION CREATORS
+// Thunk allows action creators to return a function instead of an action
+// Thunk allows actions to activate in the correct order
 
 export const getIdeas = () => {
+  // return a dispatch function as an argument 
   return dispatch => {
     return IdeaAPI.fetchIdeas()
       .then(ideas => {

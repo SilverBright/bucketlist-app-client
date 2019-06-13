@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Ideas from './Ideas';
 import AddIdea from './AddIdea';
 
-
-
 class Home extends Component {
   render() {
     return (
