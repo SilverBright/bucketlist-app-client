@@ -5,16 +5,16 @@
 export default (state = [], action) => {
   switch (action.type) {
 
-    case "SUCCESSFULLY_FETCHED_IDEAS":
+    case "FETCH_IDEAS_ACTION":
       // return payload property
       return action.ideas
 
-    case "SUCCESSFULLY_ADDED_IDEA":
+    case "ADD_IDEA_ACTION":
       // return a new state, action.idea
       return state.concat(action.idea)
       // return [ ...state, action.idea];
 
-    case "SUCCESSFULLY_DELETED_IDEA":
+    case "DELETE_IDEA_ACTION":
       return state.filter(idea => idea.id !== action.ideaId)
 
     // always return state as a default so you don't get null or undefined 

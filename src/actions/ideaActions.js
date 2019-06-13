@@ -3,28 +3,28 @@ import IdeaAPI from '../services/IdeaAPI';
 // SYNCHRONOUS ACTION CREATORS 
 // instantly return an action with data ready to go
 
-const successfullIdeasFetch = ideas => {
+const fetchIdeasAction = ideas => {
   return {
-    type: 'SUCCESSFULLY_FETCHED_IDEAS',
+    type: 'FETCH_IDEAS_ACTION',
     ideas
   }
 }
 
-const successfullyAddedIdea = idea => {
+const addIdeaAction = idea => {
   // console.log(idea)
   // return an object with a property called 'idea'
   return {
-    type: 'SUCCESSFULLY_ADDED_IDEA',
+    type: 'ADD_IDEA_ACTION',
     //idea: idea
     idea
   }
 }
 
-const succefullyDeletedIdea = ideaId => {
+const deleteIdeaAction = ideaId => {
   // console.log(ideaId)
   // returns the deleted ID number
   return { 
-    type: "SUCCESSFULLY_DELETED_IDEA",
+    type: "DELETE_IDEA_ACTION",
     ideaId
   }
 }
@@ -41,7 +41,7 @@ export const getIdeas = () => {
     return IdeaAPI.fetchIdeas()
     // when the response is received, we hit the then() function
       .then(ideas => {
-        dispatch(successfullIdeasFetch(ideas))
+        dispatch(fetchIdeasAction(ideas))
       })
     .catch(error => console.log(error));
   }
@@ -55,7 +55,7 @@ export const addIdea = idea => {
     return IdeaAPI.createIdea(idea)
     // when the response is received, we hit the then() function
       .then(idea => {
-        dispatch(successfullyAddedIdea(idea));
+        dispatch(addIdeaAction(idea));
       })
     .catch(error => console.log(error));
   }
@@ -66,7 +66,7 @@ export const deleteIdea = ideaId => {
     return IdeaAPI.deleteIdea(ideaId)
       .then(response => {
       if (response.ok)
-      dispatch(succefullyDeletedIdea(ideaId));
+      dispatch(deleteIdeaAction(ideaId));
     })
     .catch(error => console.log(error));
   }
