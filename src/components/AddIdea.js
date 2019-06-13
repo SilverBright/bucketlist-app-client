@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addIdea } from '../actions/ideaActions';
 
 class AddIdea extends Component {
-  // local state for form data
+  // set local state for form data
   constructor(props) {
     super(props);
     this.state = {
@@ -11,13 +11,18 @@ class AddIdea extends Component {
     };
   }
 
+  // set state for local form data
   handleChange = event => {
+    // { body: value }
     const { name, value } = event.target;
+    //console.log changes in real-time
+    console.log({value})
     this.setState({
       [name]: value
     });
   }
 
+  // submit local state to the store 
   handleSubmit = event => { 
     event.preventDefault();
     const idea = this.state;
@@ -25,8 +30,9 @@ class AddIdea extends Component {
         alert("field cannont be blank");
       } else {
       // send local state to the store using addIdea action creators
+      // this.array.actioncreator.idea
       this.props.addIdea(idea)
-      // CLEAR THE FORM!
+      // clear the form by setting the state to 'blank'
       this.setState({
         body: ''
       });

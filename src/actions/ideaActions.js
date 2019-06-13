@@ -5,7 +5,7 @@ import IdeaAPI from '../services/IdeaAPI';
 
 const successfullIdeasFetch = ideas => {
   return {
-    type: 'SUCCESSFUL_IDEAS_FETCH',
+    type: 'SUCCESSFULLY_FETCHED_IDEAS',
     ideas
   }
 }
@@ -15,6 +15,7 @@ const successfullyAddedIdea = idea => {
   // return an object with a property called 'idea'
   return {
     type: 'SUCCESSFULLY_ADDED_IDEA',
+    //idea: idea
     idea
   }
 }
@@ -23,7 +24,7 @@ const succefullyDeletedIdea = ideaId => {
   // console.log(ideaId)
   // returns the deleted ID number
   return { 
-    type: "SUCCESSFULLY_DELETE_IDEA",
+    type: "SUCCESSFULLY_DELETED_IDEA",
     ideaId
   }
 }
@@ -47,8 +48,12 @@ export const getIdeas = () => {
 }
 
 export const addIdea = idea => { 
+  // dispatch an action to the state
+  // return a dispatch function as an argument using thunk
   return dispatch => {
+    // make a request to the API
     return IdeaAPI.createIdea(idea)
+    // when the response is received, we hit the then() function
       .then(idea => {
         dispatch(successfullyAddedIdea(idea));
       })
