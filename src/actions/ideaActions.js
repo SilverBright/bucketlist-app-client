@@ -30,12 +30,15 @@ const succefullyDeletedIdea = ideaId => {
 
 // ASYNC ACTION CREATORS
 // Thunk allows action creators to return a function instead of an action
-// Thunk allows actions to activate in the correct order
+// Thunk allows actions to activate in the correct order (retrieve data before action creator returns an action)
 
 export const getIdeas = () => {
+  // dispatch an action to the state
   // return a dispatch function as an argument 
   return dispatch => {
+    // make a request to the API
     return IdeaAPI.fetchIdeas()
+    // when the response is received, we hit the then() function
       .then(ideas => {
         dispatch(successfullIdeasFetch(ideas))
       })
