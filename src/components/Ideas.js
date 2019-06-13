@@ -22,10 +22,10 @@ render() {
   </div>
 )
 
-    return (
-      <div>
-        { renderIdeas }
-      </div>
+  return (
+    <div>
+      { renderIdeas }
+    </div>
     )
   }
 }
