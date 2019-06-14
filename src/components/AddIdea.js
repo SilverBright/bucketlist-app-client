@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addIdea } from '../actions/ideaActions';
 
 class AddIdea extends Component {
-  // set local state for form data
+  // set local state for form data as an empty array
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +11,7 @@ class AddIdea extends Component {
     };
   }
 
-  // set state for local form data
+  // set local state for form data for changes
   handleChange = event => {
     // { body: value }
     const { name, value } = event.target;
@@ -22,7 +22,6 @@ class AddIdea extends Component {
     });
   }
 
-  // submit local state to the store 
   handleSubmit = event => { 
     event.preventDefault();
     const idea = this.state;
@@ -32,7 +31,7 @@ class AddIdea extends Component {
       // send local state to the store using addIdea action creators
       // this.array.actioncreator.idea
       this.props.addIdea(idea)
-      // clear the form by setting the state to 'blank'
+      // clear the form by setting the local state to 'blank'
       this.setState({
         body: ''
       });
@@ -40,6 +39,7 @@ class AddIdea extends Component {
   }
 
   render() {
+    // debugger
       return (
         <form onSubmit={this.handleSubmit}>
           <div className="form">
@@ -62,8 +62,8 @@ class AddIdea extends Component {
 
 // the mapStateToProps() method is executed with each change to the store's state
 // Shorten mapStateToProps() down to an anonymous arrow function and pass it directly into connect()
-// export default connect(state => ({ ideas: state.ideas }), { addIdea })(AddIdea);
-export default connect(null, { addIdea })(AddIdea);
+export default connect(state => ({ ideas: state.ideas }),{ addIdea })(AddIdea);
+// export default connect(null, { addIdea })(AddIdea);
 
 // Dan Abramov:
 // Use React for ephemeral (short-lived) state that doesn’t matter to the app globally 
