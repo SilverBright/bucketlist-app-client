@@ -11,7 +11,7 @@ class Ideas extends Component {
   }
   
 render() {
-  const renderIdeas = this.props.ideas.concat().reverse().map(idea =>
+  const renderIdeas = this.props.ideas.map(idea =>
     <div className="bucketlist card" key={idea.id}>
       <img src={ Target } alt="target"/>
         <div className="card-content-small">
@@ -21,7 +21,7 @@ render() {
       <button onClick={() => this.props.deleteIdea(idea.id)}>completed</button>
     </div>
   </div>
-)
+).reverse()
 
   return (
     <div>

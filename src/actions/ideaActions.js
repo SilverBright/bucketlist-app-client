@@ -49,6 +49,7 @@ export const getIdeas = () => {
 }
 
 export const addIdea = idea => { 
+  console.log('C');
   // dispatch an action to the state
   // return a dispatch function as an argument using thunk
   return dispatch => {
@@ -56,10 +57,12 @@ export const addIdea = idea => {
     return IdeaAPI.createIdea(idea)
     // when the response is received, we hit the then() function
       .then(idea => {
+        console.log('D');
         dispatch(addIdeaAction(idea));
       })
     .catch(error => console.log(error));
   }
+  console.log('E');
 }
 
 export const deleteIdea = ideaId => {

@@ -30,7 +30,9 @@ class AddIdea extends Component {
       } else {
       // send local state to the store using addIdea action creators
       // this.array.actioncreator.idea
+      console.log('A');
       this.props.addIdea(idea)
+      console.log('B');
       // clear the form by setting the local state to 'blank'
       this.setState({
         body: ''
