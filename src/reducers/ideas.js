@@ -6,7 +6,7 @@ export default (state = [], action) => {
   switch (action.type) {
 
     case "FETCH_IDEAS_ACTION":
-      // return payload property
+      // return payload property of ideas
       return action.ideas
 
     case "ADD_IDEA_ACTION":

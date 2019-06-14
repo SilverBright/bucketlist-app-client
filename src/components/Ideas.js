@@ -6,6 +6,7 @@ import Target from '../target.jpg';
 class Ideas extends Component {
 
   componentDidMount() {
+ // this.props.ideaActions.js
     this.props.getIdeas()
   }
   

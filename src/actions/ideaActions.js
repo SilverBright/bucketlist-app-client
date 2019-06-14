@@ -39,8 +39,9 @@ export const getIdeas = () => {
   return dispatch => {
     // make a request to the API
     return IdeaAPI.fetchIdeas()
-    // when the response is received, we hit the then() function
+    // when the response is received, we hit the callback then() function
       .then(ideas => {
+    // dispatch an action creator to reducer
         dispatch(fetchIdeasAction(ideas))
       })
     .catch(error => console.log(error));
