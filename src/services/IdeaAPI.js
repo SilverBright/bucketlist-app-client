@@ -11,6 +11,7 @@ const IdeaAPI = {
   createIdea(idea) {
     const request = {
       method: 'POST',
+      // serialize JSON data
       body: JSON.stringify({ 
         idea: idea 
       }),

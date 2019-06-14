@@ -62,7 +62,9 @@ class AddIdea extends Component {
 
 // the mapStateToProps() method is executed with each change to the store's state
 // Shorten mapStateToProps() down to an anonymous arrow function and pass it directly into connect()
-export default connect(state => ({ ideas: state.ideas }), { addIdea })(AddIdea);
+// export default connect(state => ({ ideas: state.ideas }), { addIdea })(AddIdea);
+export default connect(null, { addIdea })(AddIdea);
 
 // Dan Abramov:
-// Use React for ephemeral (short-lived) state that doesn’t matter to the app globally and doesn’t mutate in complex ways. For example... a form input state. 
+// Use React for ephemeral (short-lived) state that doesn’t matter to the app globally 
+// and doesn’t mutate in complex ways. For example... a form input state. 
