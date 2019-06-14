@@ -2,20 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addIdea } from '../actions/ideaActions';
 
-class AddIdea extends Component {
-  // set local state for form data as an empty array
-  constructor(props) {
+class AddIdea extends Component { 
+  constructor(props) {  
     super(props);
     this.state = {
       body: ''
     };
   }
 
-  // set local state for form data for changes
   handleChange = event => {
-    // { body: value }
-    const { name, value } = event.target;
-    //console.log changes in real-time
+    const { name, value } = event.target; // { body: value }
     console.log({value})
     this.setState({
       [name]: value
@@ -28,26 +24,21 @@ class AddIdea extends Component {
       if (idea.body === '') {
         alert("field cannont be blank");
       } else {
-      // send local state to the store using addIdea action creators
-      // this.array.actioncreator.idea
-      console.log('A');
-      this.props.addIdea(idea)
-      console.log('B');
-      // clear the form by setting the local state to 'blank'
-      this.setState({
+      console.log('1'); // STEP 1: submit the idea
+      this.props.addIdea(idea) 
+      console.log('4'); // STEP 4: asynchronously send the idea object to actions/ideaActions, addIdea
+      this.setState({ // clear the form
         body: ''
       });
     }
   }
 
   render() {
-    // debugger
       return (
         <form onSubmit={this.handleSubmit}>
           <div className="form">
           <label htmlFor="idea-body"></label>
-          {/* turn off Chrome autocomplete */}
-            <input autoComplete="off"
+            <input autoComplete="off" 
               type="text"
               name="body"
               value={this.state.body}
@@ -62,10 +53,7 @@ class AddIdea extends Component {
   }
 }
 
-// the mapStateToProps() method is executed with each change to the store's state
-// Shorten mapStateToProps() down to an anonymous arrow function and pass it directly into connect()
 export default connect(state => ({ ideas: state.ideas }),{ addIdea })(AddIdea);
-// export default connect(null, { addIdea })(AddIdea);
 
 // Dan Abramov:
 // Use React for ephemeral (short-lived) state that doesn’t matter to the app globally 

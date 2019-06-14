@@ -6,18 +6,16 @@ export default (state = [], action) => {
   switch (action.type) {
 
     case "FETCH_IDEAS_ACTION":
-      // return payload property of ideas
       return action.ideas
 
     case "ADD_IDEA_ACTION":
-      // return a new state, action.idea
+      console.log('7') // STEP 7: sent from a synchronous action creator (addIdeaAction)
       return state.concat(action.idea)
       // return [ ...state, action.idea];
 
     case "DELETE_IDEA_ACTION":
       return state.filter(idea => idea.id !== action.ideaId)
 
-    // always return state as a default so you don't get null or undefined 
     default: 
       return state
   }

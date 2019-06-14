@@ -1,8 +1,6 @@
 import IdeaAPI from '../services/IdeaAPI';
 
 // SYNCHRONOUS ACTION CREATORS 
-// instantly return an action with data ready to go
-
 const fetchIdeasAction = ideas => {
   return {
     type: 'FETCH_IDEAS_ACTION',
@@ -11,18 +9,14 @@ const fetchIdeasAction = ideas => {
 }
 
 const addIdeaAction = idea => {
-  // console.log(idea)
-  // return an object with a property called 'idea'
+  console.log('6') // STEP 6: dispatch a synchronous action to the REDUCER
   return {
     type: 'ADD_IDEA_ACTION',
-    //idea: idea
     idea
   }
 }
 
 const deleteIdeaAction = ideaId => {
-  // console.log(ideaId)
-  // returns the deleted ID number
   return { 
     type: "DELETE_IDEA_ACTION",
     ideaId
@@ -30,18 +24,11 @@ const deleteIdeaAction = ideaId => {
 }
 
 // ASYNC ACTION CREATORS
-// Thunk allows action creators to return a function instead of an action
-// Thunk allows actions to activate in the correct order (retrieve data before action creator returns an action)
 
 export const getIdeas = () => {
-  // dispatch an action to the state
-  // return a dispatch function as an argument 
   return dispatch => {
-    // make a request to the API
     return IdeaAPI.fetchIdeas()
-    // when the response is received, we hit the callback then() function
       .then(ideas => {
-    // dispatch an action creator to reducer
         dispatch(fetchIdeasAction(ideas))
       })
     .catch(error => console.log(error));
@@ -49,20 +36,16 @@ export const getIdeas = () => {
 }
 
 export const addIdea = idea => { 
-  console.log('C');
-  // dispatch an action to the state
-  // return a dispatch function as an argument using thunk
-  return dispatch => {
-    // make a request to the API
-    return IdeaAPI.createIdea(idea)
-    // when the response is received, we hit the then() function
-      .then(idea => {
-        console.log('D');
-        dispatch(addIdeaAction(idea));
+  console.log('2'); // STEP 2: we were sent to this action creator from components/AddIdea.js
+  return dispatch => { 
+    return IdeaAPI.createIdea(idea) // return a promise of a new idea: take an asynchronous trip to the API to create the new idea
+      .then(idea => {  
+        console.log('5', idea); // STEP 5: when the promise is fulfilled, the return value of 'idea' is passed in
+        dispatch(addIdeaAction(idea)); 
+        console.log('8') // STEP 8: dispatch a synchronous action creator 'ADD_IDEA_ACTION'
       })
     .catch(error => console.log(error));
   }
-  console.log('E');
 }
 
 export const deleteIdea = ideaId => {
