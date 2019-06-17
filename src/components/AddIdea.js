@@ -54,7 +54,3 @@ class AddIdea extends Component {
 }
 
 export default connect(state => ({ ideas: state.ideas }),{ addIdea })(AddIdea);
-
-// Dan Abramov:
-// Use React for ephemeral (short-lived) state that doesn’t matter to the app globally 
-// and doesn’t mutate in complex ways. For example... a form input state. 

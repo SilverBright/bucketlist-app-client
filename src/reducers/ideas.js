@@ -1,7 +1,7 @@
 // The reducer is just a function with a switch/case statement that produces a new state.
 // The reducer is a pure function which means that given the same arguments of state and action, it will always produce the same new state. Also it means that our reducer never updates the previous state, but rather creates a new state object.
 
-            // (current state, action )
+            // (current state, action creator type)
 export default (state = [], action) => {
   switch (action.type) {
 
