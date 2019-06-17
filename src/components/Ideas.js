@@ -6,7 +6,6 @@ import Target from '../target.jpg';
 class Ideas extends Component {
 
   componentDidMount() {
- // this.props.ideaActions.js
     this.props.getIdeas()
   }
   
@@ -17,7 +16,6 @@ render() {
         <div className="card-content-small">
       <span className="card-title blue-text text-darken-2">{ idea.body }</span>
       <br/>
-      {/* state manipulation from deleteIdea */}
       <button onClick={() => this.props.deleteIdea(idea.id)}>completed</button>
     </div>
   </div>

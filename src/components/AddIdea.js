@@ -12,7 +12,7 @@ class AddIdea extends Component {
 
   handleChange = event => {
     const { name, value } = event.target; // { body: value }
-    console.log({value})
+    // console.log({value})
     this.setState({
       [name]: value
     });
@@ -20,13 +20,13 @@ class AddIdea extends Component {
 
   handleSubmit = event => { 
     event.preventDefault();
-    const idea = this.state;
+    const idea = this.state; // SAVING LOCAL STATE
       if (idea.body === '') {
         alert("field cannont be blank");
       } else {
-      console.log('1'); // STEP 1: submit the idea
-      this.props.addIdea(idea) 
-      console.log('4'); // STEP 4: asynchronously send the idea object to actions/ideaActions, addIdea
+      console.log("1: submit the idea:", idea); // SUBMIT 'IDEA'
+      this.props.addIdea(idea)  // invoke addIdea(idea)
+      console.log("4: console.log 'idea' separately from action creators, after starting async request starts, and waiting for the promise to resolve", idea); // AFTER INVOKING CREATEIDEA(IDEA) FETCH REQUEST TO API
       this.setState({ // clear the form
         body: ''
       });

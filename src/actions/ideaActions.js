@@ -9,7 +9,7 @@ const fetchIdeasAction = ideas => {
 }
 
 const addIdeaAction = idea => {
-  console.log('6') // STEP 6: dispatch a synchronous action to the REDUCER
+  console.log("6: we dispatch an action with type: ADD_IDEA_ACTION that gets sent to the reducer", idea) // WE DISPATCH AN ACTION WITH TYPE THAT GETS SENT TO THE REDUCER
   return {
     type: 'ADD_IDEA_ACTION',
     idea
@@ -36,21 +36,20 @@ export const getIdeas = () => {
 }
 
 export const addIdea = idea => { 
-  console.log('2'); // STEP 2: we were sent to this action creator from components/AddIdea.js
-  return dispatch => { 
-    return IdeaAPI.createIdea(idea) // return a promise of a new idea: take an asynchronous trip to the API to create the new idea
-      .then(idea => {  
-        console.log('5', idea); // STEP 5: when the promise is fulfilled, the return value of 'idea' is passed in
-        dispatch(addIdeaAction(idea)); 
-        console.log('8') // STEP 8: dispatch a synchronous action creator 'ADD_IDEA_ACTION'
+  console.log("2: invoke addIdea(idea) in ideaActions", idea ); // ADDIDEA(IDEA) from: this.props.addIdea(idea)
+  return dispatch => {   // dispatch an action to state that we are about to make a request to our API
+    return IdeaAPI.createIdea(idea) // Then we make the request
+      .then(idea => {  // We do not hit our then() function until the response is received
+        console.log("5: we can access the data when the promise resolves and becomes available by chaining a then() function onto the fetch() call", idea); // WE CAN ACCESS THE DATA WHEN THE PROMISE RESOLVES AND BECOMES AVAILABLE BY CHAINING THEN() FUNCTION ONTO OUR FETCH() CALL.
+        dispatch(addIdeaAction(idea)); // WHEN THE PROMISE RESOLVES WE DISPATCH ANOTHER ACTION WITH 'TYPE'    
       })
     .catch(error => console.log(error));
   }
 }
 
 export const deleteIdea = ideaId => {
-  return dispatch => {
-    return IdeaAPI.deleteIdea(ideaId)
+  return dispatch => { 
+    return IdeaAPI.deleteIdea(ideaId) // Then we make the request
       .then(response => {
       if (response.ok)
       dispatch(deleteIdeaAction(ideaId));
