@@ -20,13 +20,13 @@ class AddIdea extends Component {
 
   handleSubmit = event => { 
     event.preventDefault();
-    const idea = this.state; // SAVING LOCAL STATE
+    const idea = this.state; // saving local state
       if (idea.body === '') {
         alert("field cannont be blank");
       } else {
-      console.log("1: submit the idea:", idea); // SUBMIT 'IDEA'
-      this.props.addIdea(idea)  // invoke addIdea(idea)
-      console.log("4: console.log 'idea' separately from action creators, after starting async request starts, and waiting for the promise to resolve", idea); // AFTER INVOKING CREATEIDEA(IDEA) FETCH REQUEST TO API
+      console.log("1: submit the idea in addIdea.js", idea); 
+      this.props.addIdea(idea)  // invoke addIdea(idea) -->  GO TO: ideaActions
+      console.log("4: this is a console.log of 'idea' in addIdea.js after the async request starts, while waiting for the promise to resolve in ideaActions", idea); // --> GO TO: ideaActions.js
       this.setState({ // clear the form
         body: ''
       });
