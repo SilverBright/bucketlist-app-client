@@ -12,7 +12,6 @@ class Home extends Component {
           <p>Start your list below</p>
           <div className="ideas-app container">
           <div>
-            {/* state manipulation from addIdea */}
             <AddIdea addIdea={this.addIdea} />
           </div>
           <div className="ideas collection">

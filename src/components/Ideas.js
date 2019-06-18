@@ -10,17 +10,16 @@ class Ideas extends Component {
   }
   
 render() {
-  const renderIdeas = this.props.ideas.concat().reverse().map(idea =>
+  const renderIdeas = this.props.ideas.map(idea =>
     <div className="bucketlist card" key={idea.id}>
       <img src={ Target } alt="target"/>
         <div className="card-content-small">
       <span className="card-title blue-text text-darken-2">{ idea.body }</span>
       <br/>
-      {/* state manipulation from deleteIdea */}
       <button onClick={() => this.props.deleteIdea(idea.id)}>completed</button>
     </div>
   </div>
-)
+).reverse()
 
   return (
     <div>
@@ -30,6 +29,4 @@ render() {
   }
 }
 
-// the mapStateToProps() method is executed with each change to the store's state
-// Shorten mapStateToProps() down to an anonymous arrow function and pass it directly into connect()
 export default connect(state => ({ ideas: state.ideas }), { getIdeas, deleteIdea })(Ideas);

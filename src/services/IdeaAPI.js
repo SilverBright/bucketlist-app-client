@@ -8,9 +8,11 @@ const IdeaAPI = {
   },
 
   // create an idea
-  createIdea(idea) {
+  createIdea(idea) { // SENT FROM: 'return IdeaAPI.createIdea(idea)' in ideaActions.js 
+    console.log("3: fetch API, and invoke createIdea(idea) asynchronously", idea)  // --> GO TO: addIdea.js 
     const request = {
       method: 'POST',
+      // serialize JSON data
       body: JSON.stringify({ 
         idea: idea 
       }),
@@ -19,7 +21,7 @@ const IdeaAPI = {
     }
   };
 
-    return fetch(`${API_URL}/ideas`, request)
+    return fetch(`${API_URL}/ideas`, request) // RETURN THE PROMISE WE ARE WAITING TO RESOLVE
       .then(response => response.json())
   },
 

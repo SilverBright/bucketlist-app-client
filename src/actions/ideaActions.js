@@ -1,64 +1,61 @@
 import IdeaAPI from '../services/IdeaAPI';
 
 // SYNCHRONOUS ACTION CREATORS 
-// instantly return an action with data ready to go
 
-const successfullIdeasFetch = ideas => {
+const fetchIdeasAction = ideas => {
   return {
-    type: 'SUCCESSFUL_IDEAS_FETCH',
+    type: 'FETCH_IDEAS_ACTION',
     ideas
   }
 }
 
-const successfullyAddedIdea = idea => {
-  // console.log(idea)
-  // return an object with a property called 'idea'
+const addIdeaAction = idea => {
+  console.log("6: when the promise resolves, we dispatch another action with 'type': ADD_IDEA_ACTION that gets sent to the reducer", idea) // --> GO TO: ideas.js reducer, type: ADD_IDEA_ACTION
   return {
-    type: 'SUCCESSFULLY_ADDED_IDEA',
+    type: 'ADD_IDEA_ACTION',
     idea
   }
 }
 
-const succefullyDeletedIdea = ideaId => {
-  // console.log(ideaId)
-  // returns the deleted ID number
+const deleteIdeaAction = ideaId => {
   return { 
-    type: "SUCCESSFULLY_DELETE_IDEA",
+    type: "DELETE_IDEA_ACTION",
     ideaId
   }
 }
 
+
+
 // ASYNC ACTION CREATORS
-// Thunk allows action creators to return a function instead of an action
-// Thunk allows actions to activate in the correct order
 
 export const getIdeas = () => {
-  // return a dispatch function as an argument 
   return dispatch => {
     return IdeaAPI.fetchIdeas()
       .then(ideas => {
-        dispatch(successfullIdeasFetch(ideas))
+        dispatch(fetchIdeasAction(ideas))
       })
     .catch(error => console.log(error));
   }
 }
 
 export const addIdea = idea => { 
-  return dispatch => {
-    return IdeaAPI.createIdea(idea)
-      .then(idea => {
-        dispatch(successfullyAddedIdea(idea));
+  console.log("2: invoke addIdea(idea) in ideaActions.js", idea ); // SENT FROM: this.props.addIdea(idea)
+  return dispatch => {  // dispatch an action to state that we are about to make a request to our API
+    return IdeaAPI.createIdea(idea) // then make a request to the API -->  GO TO: IdeaAPI createIdea(idea)
+      .then(idea => {  // We do not hit our then() function until the response is received
+        console.log("5: back to ideaActions, we can access the data when the promise resolves and becomes available by chaining a then() function onto the fetch() call", idea);
+        dispatch(addIdeaAction(idea)); // when the promise resolves, we dispatch another action with 'type' that gets sent to the reducer --> GO TO: addIdeaAction on line 12
       })
     .catch(error => console.log(error));
   }
 }
 
 export const deleteIdea = ideaId => {
-  return dispatch => {
+  return dispatch => { 
     return IdeaAPI.deleteIdea(ideaId)
       .then(response => {
       if (response.ok)
-      dispatch(succefullyDeletedIdea(ideaId));
+      dispatch(deleteIdeaAction(ideaId));
     })
     .catch(error => console.log(error));
   }
