@@ -9,7 +9,7 @@ const IdeaAPI = {
 
   // create an idea
   createIdea(idea) { // SENT FROM: 'return IdeaAPI.createIdea(idea)' in ideaActions.js 
-    console.log("3: fetch API, and invoke createIdea(idea) asynchronously", idea)  // --> GO TO: addIdea.js 
+    // console.log("3: fetch API, and invoke createIdea(idea) asynchronously", idea)  // --> GO TO: addIdea.js 
     const request = {
       method: 'POST',
       // serialize JSON data

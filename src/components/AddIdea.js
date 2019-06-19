@@ -24,9 +24,9 @@ class AddIdea extends Component {
       if (idea.body === '') {
         alert("field cannont be blank");
       } else {
-      console.log("1: submit the idea in addIdea.js", idea); 
-      this.props.addIdea(idea)  // invoke addIdea(idea) -->  GO TO: ideaActions
-      console.log("4: this is a console.log of 'idea' in addIdea.js after the async request starts, and while waiting for the promise to resolve in ideaActions", idea); // --> GO TO: ideaActions.js
+      // console.log("1: submit the idea in addIdea.js", idea); 
+      this.props.addIdea(idea)  // invoke addIdea(idea) -->  GO TO: ideaActions.js
+      // console.log("4: this is a console.log of 'idea' in addIdea.js after the async request starts, and while waiting for the promise to resolve in ideaActions", idea); // --> GO TO: ideaActions.js
       this.setState({ // clear the form
         body: ''
       });
@@ -46,7 +46,7 @@ class AddIdea extends Component {
               placeholder="add an item to your bucketlist"
             />
             <br/>
-          <button>add your bucklist item</button>
+          <button>add your bucklist item</button> 
         </div>
       </form>
     )
