@@ -9,10 +9,13 @@ class Ideas extends Component {
     this.props.getIdeas()
   }
 
+  // THIS IS A NEW CLICK EVENT FOR THE NEW BUTTON ON LINE 54. HOW DO I CONNECT THIS WITH MY SORTED LIST, LINE 40?
+
   handleClick() {
     console.log("you clicked a button")
-    // how do I connect renderSortedIdeas to the button?
   }
+
+// ORIGINAL LIST
 
 render() {
   const renderIdeas = this.props.ideas.map(idea =>
@@ -26,10 +29,13 @@ render() {
   </div>
 ).reverse()
 
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
+  // NEW SORTED ALPHABETICAL LIST
 
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
   const sortedIdeas = this.props.ideas.sort((i,j) => i.body.localeCompare(j.body, {sensitivity: 'base'}))
   console.log(sortedIdeas)
+
+  // MAPPING THROUGH NEW SORTED LIST
 
   const renderSortedIdeas = sortedIdeas.map(idea =>
     <div className="bucketlist card" key={idea.id}>
@@ -44,6 +50,7 @@ render() {
     
   return (
     <div>
+      {/* BUTTON PLACEHOLDER - INSTRUCTED TO PLACE THE BUTTON HERE TO START*/}
       <button onClick={this.handleClick}>sort the list alphabetically</button> 
       { renderIdeas }
     </div>
