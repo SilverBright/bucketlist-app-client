@@ -9,8 +9,9 @@ class Ideas extends Component {
     this.props.getIdeas()
   }
 
-  handleClick = () => {
-    console.log("button clicked!")
+  handleClick() {
+    console.log("you clicked a button")
+    // how do I connect renderSortedIdeas to the button?
   }
 
 render() {
@@ -26,8 +27,9 @@ render() {
 ).reverse()
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
+
   const sortedIdeas = this.props.ideas.sort((i,j) => i.body.localeCompare(j.body, {sensitivity: 'base'}))
-  // console.log(sortedIdeas)
+  console.log(sortedIdeas)
 
   const renderSortedIdeas = sortedIdeas.map(idea =>
     <div className="bucketlist card" key={idea.id}>
@@ -44,7 +46,6 @@ render() {
     <div>
       <button onClick={this.handleClick}>sort the list alphabetically</button> 
       { renderIdeas }
-      {/* { renderSortedIdeas } */}
     </div>
     )
   }
@@ -52,6 +53,13 @@ render() {
 
 export default connect(state => ({ ideas: state.ideas }), { getIdeas, deleteIdea })(Ideas);
 
+
+
+
+
+
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
   // const sortedIdeas = this.props.ideas.sort(function (a, b) {
   //   const bodyA = a.body.toUpperCase();
