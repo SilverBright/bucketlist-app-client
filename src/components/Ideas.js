@@ -9,10 +9,22 @@ class Ideas extends Component {
     this.props.getIdeas()
   }
 
-  // THIS IS A NEW CLICK EVENT FOR THE NEW BUTTON ON LINE 54. HOW DO I CONNECT THIS WITH MY SORTED LIST, LINE 40?
+  // create a new state so that state can be updated
+  constructor(props) {
+    super(props)
+    this.state = {
+      update: false
+    }
+    console.log(this.state) // {update: false}
+  }
 
-  handleClick() {
-    console.log("you clicked a button")
+  handleClick = e => {
+    e.preventDefault();
+    this.setState({
+      ...this.state,
+      update: true
+    })
+    console.log("button pressed to sort the list", this.state) // {update: false}
   }
 
 // ORIGINAL LIST
@@ -29,13 +41,12 @@ render() {
   </div>
 ).reverse()
 
-  // NEW SORTED ALPHABETICAL LIST
+  // SORT LIST ALPHABETICALLY
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
   const sortedIdeas = this.props.ideas.sort((i,j) => i.body.localeCompare(j.body, {sensitivity: 'base'}))
-  console.log(sortedIdeas)
 
-  // MAPPING THROUGH NEW SORTED LIST
+  // MAP THROUGH NEW SORTED LIST
 
   const renderSortedIdeas = sortedIdeas.map(idea =>
     <div className="bucketlist card" key={idea.id}>
@@ -46,25 +57,19 @@ render() {
         <button onClick={() => this.props.deleteIdea(idea.id)}>completed</button>
       </div>
     </div>
-  );
+  ); 
     
   return (
     <div>
-      {/* BUTTON PLACEHOLDER - INSTRUCTED TO PLACE THE BUTTON HERE TO START*/}
-      <button onClick={this.handleClick}>sort the list alphabetically</button> 
-      { renderIdeas }
+      <button onClick={ this.handleClick }>sort the list alphabetically</button> 
+      {(this.state.update === false) ? renderIdeas : renderSortedIdeas }
+      {/* { renderIdeas }   */}
     </div>
     )
   }
 }
 
 export default connect(state => ({ ideas: state.ideas }), { getIdeas, deleteIdea })(Ideas);
-
-
-
-
-
-
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
