@@ -4,27 +4,19 @@ import { getIdeas, deleteIdea } from '../actions/ideaActions';
 import Target from '../target.jpg';
 
 class Ideas extends Component {
-
+  // no super(props) because I don't need access to the state's props within the Component
+  state = { isClicked: false }
+  
   componentDidMount() {
     this.props.getIdeas()
   }
 
-  // create a new state so that state can be updated
-  constructor(props) {
-    super(props)
-    this.state = {
-      update: false
-    }
-    console.log(this.state) // {update: false}
-  }
-
+  // when the button is click, state changes to isClicked: true
   handleClick = e => {
     e.preventDefault();
     this.setState({
-      ...this.state,
-      update: true
+      isClicked: true
     })
-    console.log("button pressed to sort the list", this.state) // {update: false}
   }
 
 // ORIGINAL LIST
@@ -62,7 +54,9 @@ render() {
   return (
     <div>
       <button onClick={ this.handleClick }>sort the list alphabetically</button> 
-      {(this.state.update === false) ? renderIdeas : renderSortedIdeas }
+      {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator */}
+      {/* this.state.isClicked = false  ?      true   :       false      */}
+      {(this.state.isClicked === false) ? renderIdeas : renderSortedIdeas }
       {/* { renderIdeas }   */}
     </div>
     )
@@ -72,8 +66,7 @@ render() {
 export default connect(state => ({ ideas: state.ideas }), { getIdeas, deleteIdea })(Ideas);
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
-
-  // const sortedIdeas = this.props.ideas.sort(function (a, b) {
+  // const renderIdeas = this.props.ideas.sort(function (a, b) {
   //   const bodyA = a.body.toUpperCase();
   //   const bodyB = b.body.toUpperCase();
   //    if (bodyA < bodyB) 
