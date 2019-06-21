@@ -1,3 +1,9 @@
+// #################################################
+
+// ALTERNATE CODE FOR IDEAS.JS
+
+// #################################################
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getIdeas, deleteIdea } from '../actions/ideaActions';
