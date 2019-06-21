@@ -9,21 +9,47 @@ class Ideas extends Component {
   
   componentDidMount() {
     this.props.getIdeas()
+    this.setState({
+      ideas: this.props.ideas
+    })
   }
 
-  // when the button is clicked, state changes to isClicked: true
+  reversedIdeas = this.props.ideas
+  sortedIdeas = this.props.ideas.sort((i,j) => i.body.localeCompare(j.body, {sensitivity: 'base'}))
+
+  // when the button is click, state changes to isClicked: true
   handleClick = e => {
     e.preventDefault();
     this.setState({
       isClicked: true
     })
+    this.reversedIdeas = this.sortedIdeas
   }
 
 // ORIGINAL LIST
 
 render() {
+
+  // const ideasCard = this.props.ideas.map(idea =>
+  //   <div className="bucketlist card" key={idea.id}>
+  //     <img src={ Target } alt="target"/>
+  //       <div className="card-content-small">
+  //       <span className="card-title blue-text text-darken-2">{ idea.body }</span>
+  //       <br/>
+  //       <button onClick={() => this.props.deleteIdea(idea.id)}>completed</button>
+  //     </div>
+  //   </div>
+  // )
  
-  const renderIdeas = this.props.ideas.map(idea =>
+
+  // const renderIdeas = ideasCard.reverse()
+  // const ideas = () => {
+  //   if (this.state.isClicked) {
+  //     reversedIdeas = sortedIdeas
+  //   }
+  // }
+ 
+  const renderIdeas = this.reversedIdeas.map(idea =>
     <div className="bucketlist card" key={idea.id}>
       <img src={ Target } alt="target"/>
         <div className="card-content-small">
@@ -37,28 +63,31 @@ render() {
   // SORT LIST ALPHABETICALLY
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
-  const sortedIdeas = this.props.ideas.sort((i,j) => i.body.localeCompare(j.body, {sensitivity: 'base'}))
+  
+
+  // const sortedIdeas = renderIdeas.sort()
 
   // MAP THROUGH NEW SORTED LIST
 
-  const renderSortedIdeas = sortedIdeas.map(idea =>
-    <div className="bucketlist card" key={idea.id}>
-      <img src={ Target } alt="target"/>
-        <div className="card-content-small">
-        <span className="card-title blue-text text-darken-2">{ idea.body }</span>
-        <br/>
-        <button onClick={() => this.props.deleteIdea(idea.id)}>completed</button>
-      </div>
-    </div>
-  ); 
+  // const renderSortedIdeas = sortedIdeas.map(idea =>
+  //   <div className="bucketlist card" key={idea.id}>
+  //     <img src={ Target } alt="target"/>
+  //       <div className="card-content-small">
+  //       <span className="card-title blue-text text-darken-2">{ idea.body }</span>
+  //       <br/>
+  //       <button onClick={() => this.props.deleteIdea(idea.id)}>completed</button>
+  //     </div>
+  //   </div>
+  // ); 
     
   return (
     <div>
       <button onClick={ this.handleClick }>sort the list alphabetically</button> 
       {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator */}
       {/* condition           = false  ?      true   :       false      */}
-      {(this.state.isClicked === false) ? renderIdeas : renderSortedIdeas }
-      {/* { renderIdeas }   */}
+      {/* {(this.state.isClicked === false) ? renderIdeas : renderIdeas = renderSortedIdeas } */}
+      {/* { ideas() } */}
+      { renderIdeas }  
     </div>
     )
   }

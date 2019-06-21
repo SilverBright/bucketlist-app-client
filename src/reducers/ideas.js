@@ -9,6 +9,7 @@ export default (state = [], action) => {
       return action.ideas
 
     case "ADD_IDEA_ACTION":
+     
       // console.log("7: the reducer combines the current state with the new state, into a new array, then 'reduces' it down to the new state", state.concat(action.idea))  
       return state.concat(action.idea)
       // return [ ...state, action.idea];
