@@ -28,7 +28,6 @@ class Ideas extends Component {
 // ORIGINAL LIST
 
 render() {
- 
   const renderIdeas = this.props.ideas.map(idea =>
     <div className="bucketlist card" key={idea.id}>
       <img src={ Target } alt="target"/>
@@ -38,25 +37,21 @@ render() {
         <button onClick={() => this.props.deleteIdea(idea.id)}>completed</button>
       </div>
     </div>
-  ).reverse()
+  )
 
   // SORT LIST ALPHABETICALLY
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
-  const sortedIdeas = this.props.ideas.sort((i,j) => i.body.localeCompare(j.body, {sensitivity: 'base'}))
-
-  // MAP THROUGH NEW SORTED LIST
-
-  const renderSortedIdeas = sortedIdeas.map(idea =>
-    <div className="bucketlist card" key={idea.id}>
-      <img src={ Target } alt="target"/>
-        <div className="card-content-small">
-        <span className="card-title blue-text text-darken-2">{ idea.body }</span>
-        <br/>
-        <button onClick={() => this.props.deleteIdea(idea.id)}>completed</button>
+  const renderSortedIdeas = this.props.ideas.sort((i,j) => i.body.localeCompare(j.body, {sensitivity: 'base'})).map(idea =>
+      <div className="bucketlist card" key={idea.id}>
+        <img src={ Target } alt="target"/>
+          <div className="card-content-small">
+          <span className="card-title blue-text text-darken-2">{ idea.body }</span>
+          <br/>
+          <button onClick={() => this.props.deleteIdea(idea.id)}>completed</button>
+        </div>
       </div>
-    </div>
-  ); 
+    ); 
     
   return (
     <div>
