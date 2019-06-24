@@ -22,12 +22,11 @@ class Ideas extends Component {
 // ORIGINAL LIST
 
 render() {
- 
-  const renderIdeas = this.props.ideas.map(idea =>
+ const renderIdeas = this.props.ideas.map(idea =>  // map create
     <div className="bucketlist card" key={idea.id}>
       <img src={ Target } alt="target"/>
         <div className="card-content-small">
-        <span className="card-title blue-text text-darken-2">{ idea.body }</span>
+          <span className="card-title blue-text text-darken-2">{ idea.body }</span>
         <br/>
         <button onClick={() => this.props.deleteIdea(idea.id)}>completed</button>
       </div>
@@ -37,26 +36,22 @@ render() {
   // SORT LIST ALPHABETICALLY
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
-  const sortedIdeas = this.props.ideas.sort((i,j) => i.body.localeCompare(j.body, {sensitivity: 'base'}))
-
-  // MAP THROUGH NEW SORTED LIST
-
-  const renderSortedIdeas = sortedIdeas.map(idea =>
-    <div className="bucketlist card" key={idea.id}>
-      <img src={ Target } alt="target"/>
-        <div className="card-content-small">
-        <span className="card-title blue-text text-darken-2">{ idea.body }</span>
-        <br/>
-        <button onClick={() => this.props.deleteIdea(idea.id)}>completed</button>
+  const renderSortedIdeas = this.props.ideas.sort((i,j) => i.body.localeCompare(j.body, {sensitivity: 'base'})).map(idea =>
+      <div className="bucketlist card" key={idea.id}>
+        <img src={ Target } alt="target"/>
+          <div className="card-content-small">
+            <span className="card-title blue-text text-darken-2">{ idea.body }</span>
+          <br/>
+          <button onClick={() => this.props.deleteIdea(idea.id)}>completed</button>
+        </div>
       </div>
-    </div>
-  ); 
-    
+    ); 
+
   return (
     <div>
       <button onClick={ this.handleClick }>sort the list alphabetically</button> 
       {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator */}
-      {/* condition           = false  ?      true   :       false      */}
+      {/* condition           = false   ?      true   :       false     */}
       {(this.state.isClicked === false) ? renderIdeas : renderSortedIdeas }
       {/* { renderIdeas }   */}
     </div>
@@ -65,6 +60,8 @@ render() {
 }
 
 export default connect(state => ({ ideas: state.ideas }), { getIdeas, deleteIdea })(Ideas);
+
+// ORIGINAL SORT FUNCTION CODE
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
   // const renderIdeas = this.props.ideas.sort(function (a, b) {
