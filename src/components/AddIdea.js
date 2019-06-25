@@ -46,7 +46,7 @@ class AddIdea extends Component {
               placeholder="add an item to your bucketlist"
             />
             <br/>
-          <button>add your bucklist item</button> 
+          <button class="waves-effect waves-light btn green">click to add your idea</button> 
         </div>
       </form>
     )
