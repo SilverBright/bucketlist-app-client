@@ -11,8 +11,7 @@ class AddIdea extends Component {
   }
 
   handleChange = event => {
-    const { name, value } = event.target; // { body: value }
-    // console.log({value})
+    const { name, value } = event.target;
     this.setState({
       [name]: value
     });
@@ -20,14 +19,12 @@ class AddIdea extends Component {
 
   handleSubmit = event => { 
     event.preventDefault();
-    const idea = this.state; // saving local state into a variable of 'idea'
+    const idea = this.state;
       if (idea.body === '') {
         alert("field cannont be blank");
       } else {
-      // console.log("1: submit the idea in addIdea.js", idea); 
-      this.props.addIdea(idea)  // invoke addIdea(idea) -->  GO TO: ideaActions.js
-      // console.log("4: this is a console.log of 'idea' in addIdea.js after the async request starts, and while waiting for the promise to resolve in ideaActions", idea); // --> GO TO: ideaActions.js
-      this.setState({ // clear the form
+      this.props.addIdea(idea) 
+      this.setState({ 
         body: ''
       });
     }
