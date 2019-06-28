@@ -1,6 +1,6 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
-//fetch ideas
+// fetch ideas
 const IdeaAPI = { 
   fetchIdeas() {
     return fetch(`${API_URL}/ideas`)
@@ -8,11 +8,9 @@ const IdeaAPI = {
   },
 
   // create an idea
-  createIdea(idea) { // SENT FROM: 'return IdeaAPI.createIdea(idea)' in ideaActions.js 
-    // console.log("3: fetch API, and invoke createIdea(idea) asynchronously", idea)  // --> GO TO: addIdea.js 
+  createIdea(idea) {  
     const request = {
       method: 'POST',
-      // serialize JSON data
       body: JSON.stringify({ 
         idea: idea 
       }),
@@ -21,7 +19,7 @@ const IdeaAPI = {
     }
   };
 
-    return fetch(`${API_URL}/ideas`, request) // RETURN THE PROMISE WE ARE WAITING TO RESOLVE
+    return fetch(`${API_URL}/ideas`, request)
       .then(response => response.json())
   },
 
