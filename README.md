@@ -1,7 +1,5 @@
 # BUCKET LIST
 
-<img src="images/bucketlist.png" width="30%"> <img src="images/about.png" width="30%"> <img src="images/faq.png" width="31%">
-
 Welcome to Bucket List, a simple todo app with a fun twist.
 
 Features:
@@ -11,6 +9,7 @@ Features:
 - makes use of materializecss for minimal stylization
 - project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
+<img src="images/bucketlist.png" width="30%"> <img src="images/about.png" width="30%"> <img src="images/faq.png" width="31%">
 
 ## Installation
 
