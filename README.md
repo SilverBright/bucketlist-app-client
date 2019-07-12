@@ -34,6 +34,9 @@ You can delete your entry by selecting 'click to complete'.
 An optional button is included to sort your list alphabetically.  
 You can also navigate to the FAQ page, About page, or Home page.
 
+![](images/bucketlist.png)
+![](images/about.png)
+![](images/faq.png)
 
 ## Learn More
 
