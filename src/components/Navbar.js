@@ -5,12 +5,11 @@ const Navbar = () => {
   return (
     <nav className="nav-wrapper blue darken-3">
       <div className="container">
-        <a className="brand-logo bold">bucketlist</a>
+        <a className="brand-logo bold">bucket list</a>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-          <li><Link to="/FAQ">FAQ</Link></li>
+          <li><Link to="/">home</Link></li>
+          <li><Link to="/about">about</Link></li>
+          <li><Link to="/FAQ">faq</Link></li>
         </ul>
       </div>
     </nav>

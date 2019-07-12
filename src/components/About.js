@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div className="container">
       <h3 className="center">About</h3>
-      <h5>This is my wild and wacky bucketlist app.</h5>
+      <h5>Welcome to my bucketlist app, a simple todo app with a fun twist.</h5>
     </div>
   )
 }

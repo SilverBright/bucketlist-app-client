@@ -6,7 +6,7 @@ class Home extends Component {
   render() {
     return (
       <div className="container">
-        <h3 className="center" text="bold">Welcome to Bucketlist</h3>
+        <h3 className="center" text="bold">welcome to bucket list</h3>
           <h5>Things to do before you</h5>
           <h5>DIE</h5>
           <p>Start your list below</p>
