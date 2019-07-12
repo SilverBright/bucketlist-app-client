@@ -34,6 +34,9 @@ You can delete your entry by selecting 'click to complete'.
 An optional button is included to sort your list alphabetically.  
 You can also navigate to the FAQ page, About page, or Home page.
 
+![](https://i.imgur.com/TBTcEJ9.png)
+![](https://imgur.com/WCAvwSR.png)
+![](https://i.imgur.com/8U0vy3C.png)
 
 ## Learn More
 
