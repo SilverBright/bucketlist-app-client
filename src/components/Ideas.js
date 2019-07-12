@@ -18,12 +18,11 @@ class Ideas extends Component {
   }
 
 render() {
-  console.log("a", this.props.ideas)
   let sortedIdeas 
     if (this.state.isSorted === true) {
       sortedIdeas = this.props.ideas.concat().sort((i,j) => i.body.localeCompare(j.body, {sensitivity: 'base'}));
     } else {
-      sortedIdeas = this.props.ideas.concat().sort((i,j) => j.created_at.localeCompare(i.created_at, {sensitivity: 'base'}))
+      sortedIdeas = this.props.ideas.concat().sort((i,j) => j.created_at.localeCompare(i.created_at, {sensitivity: 'base'}));
   }
 
  const renderIdeas = sortedIdeas.map(idea =>

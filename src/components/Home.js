@@ -5,10 +5,10 @@ import AddIdea from './AddIdea';
 class Home extends Component {
   render() {
     return (
-      <div className="container">
-        <h3 className="center" text="bold">Welcome to Bucketlist</h3>
-          <h5>Things to do before you</h5>
-          <h5>DIE</h5>
+      <div className="container"><br />
+        <h3 className="center" text="bold">welcome to bucket list</h3>
+          <h5>things to do before you</h5>
+          <h4>DIE</h4>
           <p>Start your list below</p>
           <div className="ideas-app container">
           <div>
