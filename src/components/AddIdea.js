@@ -41,8 +41,7 @@ class AddIdea extends Component {
               value={this.state.body}
               onChange={this.handleChange}
               placeholder="add an item to your bucketlist"
-            />
-            <br/>
+            /><br/>
           <button class="waves-effect waves-light btn green">click to add your idea</button> 
         </div>
       </form>

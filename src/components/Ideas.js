@@ -30,8 +30,7 @@ render() {
     <div className="bucketlist card" key={idea.id}>
       <img src={ Target } alt="target"/>
         <div className="card-content-small">
-          <span className="card-title blue-text text-darken-2">{ idea.body }</span>
-        <br/>
+          <span className="card-title blue-text text-darken-2">{ idea.body }</span><br/>
         <button class="waves-effect waves-light btn-small red"onClick={() => this.props.deleteIdea(idea.id)}>click to complete</button>
       </div>
     </div>
