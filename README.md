@@ -1,15 +1,15 @@
 # BUCKET LIST
 
-Welcome to Bucket List, a simple todo app with a fun twist.
+Welcome to Bucket List, a simple todo app with a twist.
 
-Features:
+<img src="images/bucketlist.png" width="30%"> <img src="images/about.png" width="30%"> <img src="images/faq.png" width="31%">
+
+Specs:
 - uses Rails API to manage data persistence: https://github.com/SilverBright/bucketlist-app-api
 - uses Redux Thunk middleware to respond to and modify state change
 - makes use of 'react-router' with proper RESTful routing
 - makes use of materializecss for minimal stylization
 - project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
-
-<img src="images/bucketlist.png" width="30%"> <img src="images/about.png" width="30%"> <img src="images/faq.png" width="31%">
 
 ## Installation
 
