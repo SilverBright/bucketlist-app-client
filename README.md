@@ -31,7 +31,7 @@ Navigate to [http://localhost:3000](http://localhost:3000) to view it in the bro
 
 ## Instructions
 
-Add a new bucket list item by typing in the field, and click submit.   
+Add a new bucket list item by typing in the field, and clicking submit.   
 Each new entry will be visible at the top of the list.   
 You can delete your entry by selecting 'click to complete'.   
 An optional button is included to sort your list alphabetically.  
