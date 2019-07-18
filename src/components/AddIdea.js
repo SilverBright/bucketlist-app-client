@@ -31,9 +31,9 @@ class AddIdea extends Component {
   }
 
   render() {
-      return (
-        <form onSubmit={this.handleSubmit}>
-          <div className="form">
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <div className="form">
           <label htmlFor="idea-body"></label>
             <input autoComplete="off" 
               type="text"
