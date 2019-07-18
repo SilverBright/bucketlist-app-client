@@ -18,6 +18,8 @@ Clone or download `git@github.com:SilverBright/bucketlist-app-client.git`.
 Switch to the project directory and run:   
 ### `bundle install`
 
+
+
 Have your Rails API running on port 3001 (see [here](https://github.com/SilverBright/bucketlist-app-api/blob/master/README.md) for instructions), then start the client application:
 ### `npm start`
 
