@@ -3,7 +3,6 @@
 Welcome to Bucket List, a simple todo app with a twist.
 
 <img src="images/bucketlist.png" width="30%"> <img src="images/about.png" width="30%"> <img src="images/faq.png" width="31%">
-<<<<<<< HEAD
 
 ## Video Demo
 <a href="https://youtu.be/WX5LjkZzSWM"><img src="images/bucketlist.png" 
@@ -15,16 +14,6 @@ alt="Bucket List" width="450" /></a>
 - react-router with RESTful routing
 - materializecss for minimal stylization
 
-=======
-
-Specs:
-- uses Rails API to manage data persistence: https://github.com/SilverBright/bucketlist-app-api
-- uses Redux Thunk middleware to respond to and modify state change
-- makes use of 'react-router' with proper RESTful routing
-- makes use of materializecss for minimal stylization
-- project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
-
->>>>>>> master
 ## Installation
 
 Clone or download `git@github.com:SilverBright/bucketlist-app-client.git`.
@@ -44,13 +33,7 @@ Add a new bucket list item by typing in the field, and click submit.
 Each new entry will be visible at the top of the list.   
 You can delete your entry by selecting 'click to complete'.   
 An optional button is included to sort your list alphabetically.  
-<<<<<<< HEAD
 A user also can navigate to the FAQ page, About page, or back to the Home page.
-=======
-You can also navigate to the FAQ page, About page, or Home page.
-
-
->>>>>>> master
 
 
 ## License
