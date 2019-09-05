@@ -19,7 +19,7 @@ alt="Bucket List" width="450" /></a>
 Clone or download `git@github.com:SilverBright/bucketlist-app-client.git`.
 
 Switch to the project directory and run:   
-### `bundle install`
+### `npm install`
 
 
 
