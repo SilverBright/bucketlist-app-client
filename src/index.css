@@ -33,3 +33,7 @@ code {
 input {
   text-align: center;
 } 
+
+ul.browser-default li {
+  font-size: 1.3rem;
+}
