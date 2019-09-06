@@ -9,7 +9,8 @@ Welcome to Bucket List, a simple todo app with a twist.
 alt="Bucket List" width="450" /></a>
 
 ## Specs
-- React / Redux-Thunk frontend
+- React front end
+- Redux & Redux-Thunk for store management and middleware
 - Rails API backend to manage data persistence: https://github.com/SilverBright/bucketlist-app-api
 - react-router with RESTful routing
 - materializecss for minimal stylization
