@@ -6,11 +6,10 @@ class Home extends Component {
   render() {
     return (
       <div className="container"><br />
-        <h3 className="center" text="bold">welcome to bucket list</h3>
-          <h5>things to do before you</h5>
-          <h4>DIE</h4>
-          <p>Start your list below</p>
-          <div className="ideas-app container">
+        <h1 className="center" text="bold">welcome to bucket list</h1>
+        <h3>things to do before you DIE</h3>
+        <p>Start your list below</p>
+        <div className="ideas-app container">
           <div>
             <AddIdea addIdea={this.addIdea} />
           </div>
