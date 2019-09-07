@@ -3,16 +3,18 @@ import React from 'react';
 const About = () => {
   return (
     <div className="container"><br />
-      <h3>About</h3>
-      <h5>Welcome to my React on Rails app, Bucket List. Bucket List is a todo style app built with:</h5>
+      <h1>About</h1>
+      <h3>Welcome to my React on Rails app, Bucket List.</h3>
+      <p>Bucket List is a todo style app built with:</p>
         <div className="container left-align">
           <ul className="browser-default">
-            <li>React front end</li>
-            <li>Redux & Redux Thunk for store management and middleware</li>
+            <li>React library front end</li>
+            <li>Redux for store management</li>
+            <li>Redux-Thunk middleware for asynchronous functions</li>
             <li>Rails API backend for data persistence</li>
             <li>React-router for navigation</li>
-            <li>Materializecss for styling</li>
-            <li>and, an optional button to toggle between sorting your list alphabetically, or in sorting reverse order</li>
+            <li>Materializecss (by Google) for design</li>
+            <li>Optional button to toggle between alphabetical sorting and reverse order sorting</li>
           </ul>
         </div>
     </div>
