@@ -37,3 +37,15 @@ input {
 ul.browser-default li {
   font-size: 1.3rem;
 }
+
+p {
+  font-size: 1.5rem;
+}
+
+::placeholder {
+ font-size: 1.5rem;
+}
+
+nav ul a {
+  font-size: 1.5rem;
+}
