@@ -41,7 +41,6 @@ render() {
 
   return (
     <div>
-      <br />
       <button class="waves-effect btn blue" onClick={ this.handleClick }>{
         (this.state.isSorted === false) ? "sort ideas alphabetically" : "sort ideas by order created" }
       </button> 

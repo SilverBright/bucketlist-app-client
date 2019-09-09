@@ -1,3 +1,5 @@
+/* Background image */
+
 body {
   background: url('./sky.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -15,10 +17,12 @@ code {
     monospace;
 }
 
+/* Navbar font size */
 nav ul a {
   font-size: 1.5rem;
 }
 
+/* Target image placement inside idea cards */
 .ideas .bucketlist img{
   position: absolute;
   top: 0px;
@@ -28,28 +32,32 @@ nav ul a {
   height: 75px
 }
 
+/* ideas card container */
 .ideas .bucketlist{
   overflow: hidden;
-  padding-left: 1px;
-  padding-bottom: 5px;
 } 
 
+/* input text placement */
 input {
   text-align: center;
 } 
 
+/* font size for list elements */
 ul.browser-default li {
   font-size: 1.3rem;
 }
 
+/* font size for paragraph elements */
 p {
   font-size: 1.5rem;
 }
 
+/* font size for placeholder selector */
 ::placeholder {
  font-size: 1.5rem;
 }
 
+/* shadow effect for "DIE" on home page */
 .shadowed {
   text-shadow: 1px 1px 3px darkred
 }
