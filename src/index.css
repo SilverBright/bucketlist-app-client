@@ -15,6 +15,10 @@ code {
     monospace;
 }
 
+nav ul a {
+  font-size: 1.5rem;
+}
+
 .ideas .bucketlist img{
   position: absolute;
   top: 0px;
@@ -46,6 +50,6 @@ p {
  font-size: 1.5rem;
 }
 
-nav ul a {
-  font-size: 1.5rem;
+.shadowed {
+  text-shadow: 1px 1px 3px darkred
 }
