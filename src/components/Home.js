@@ -7,7 +7,7 @@ class Home extends Component {
     return (
       <div className="container"><br />
         <h1 className="center" text="bold">welcome to <strong>bucket list</strong></h1>
-        <h3>things to do before you <span className="shadowed">DIE</span></h3>
+        <h3>things to do before you <span id="shadowed">DIE</span></h3>
         <div className="ideas-app container">
           <div>
             <AddIdea addIdea={this.addIdea} />
